@@ -28,8 +28,6 @@ public class userApplication {
                 e.printStackTrace();
             }
         }
-
-
     }
 
     public static void echo(int echo_code,int echo_case,int serverPort,int clientPort) throws SocketException,IOException,UnknownHostException{
