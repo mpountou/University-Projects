@@ -8,16 +8,19 @@ import java.util.ArrayList;
 public class userApplication {
     public static void main(String[] param) {
         // session id
-        int serverPort= 38021; // MUST BE FILLED
-        int clientPort= 48021; // MUST BE FILLED
-        int echo_code_delay = 5489; // MUST BE FILLED
+        int serverPort= 38012; // MUST BE FILLED
+        int clientPort= 48012; // MUST BE FILLED
+        int echo_code_delay = 9063; // MUST BE FILLED
+        int image_code = 3973; // MUST BE FILLED
         // initialize scanner
         Scanner scanner = new Scanner(System.in);
         //time to choose
         int userChoice = 0;
         // printing choices
         System.out.print("\n1. Create Datagrams G1,G2");
-        System.out.print("\n2. Create Datagrams G3,G4\n");
+        System.out.print("\n2. Create Datagrams G3,G4");
+        System.out.print("\n3. Create Image E1");
+        System.out.print("\n3. Create Image E2");
         // get user choice
         userChoice = Integer.parseInt(scanner.nextLine());
         // apply
@@ -25,6 +28,14 @@ public class userApplication {
             try {
                 echo(echo_code_delay, userChoice, serverPort, clientPort);
             } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (userChoice == 3 || userChoice == 4){
+            try {
+                image(image_code, userChoice, serverPort, clientPort);
+            }
+            catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -211,5 +222,56 @@ public class userApplication {
         recieveSocket.close();
         sendSocket.close();
 
+    }
+
+
+    public static void image(int code,int case_image,int server_listening_port,int client_listening_port) throws SocketException,IOException,UnknownHostException{
+        // update image code based on every case
+        String image_code="";
+        // update title for file
+        String title_case="";
+        if(case_image == 3){
+            title_case="CAMERA_1";
+            image_code = "M" + Integer.toString(code) +"\r";
+        }else if(case_image == 4){
+            title_case="CAMERA_2";
+            image_code = "M" + Integer.toString(code) + " " + "CAM=PTZ" + "\r";
+        }
+        // initialize InetAddress
+        byte[] hostIP = { (byte)155,(byte)207,18,(byte)208 };
+        InetAddress hostAddress = InetAddress.getByAddress(hostIP);
+        // array of bytes
+        byte[] code_array = image_code.getBytes();
+        // initialize DatagramSocket
+        DatagramSocket sendSocket = new DatagramSocket();
+        DatagramPacket sendPacket = new DatagramPacket(code_array,code_array.length, hostAddress,server_listening_port);
+        DatagramSocket recieveSocket = new DatagramSocket(client_listening_port);
+        recieveSocket.setSoTimeout(3600);
+        // array of bytes
+        byte[] byte_recieve_array = new byte[2048];
+        DatagramPacket recievePacket = new DatagramPacket(byte_recieve_array,byte_recieve_array.length);
+        sendSocket.send(sendPacket);
+        // set Timeout
+        recieveSocket.setSoTimeout(3200);
+        // output file name
+        String outputName = ("image"+code+title_case+".jpeg");
+        // initialize File-Output-Stream
+        FileOutputStream fOS = new FileOutputStream(outputName);
+        for(;;){
+            try{
+                // receiving packets
+                recieveSocket.receive(recievePacket);
+                if (byte_recieve_array == null) break;
+                for(int i = 0 ; i <= 127 ; i++){
+                    fOS.write(byte_recieve_array[i]);
+                }
+            }catch (IOException ex) {
+                System.out.println(ex);
+                break;
+            }
+        }
+        fOS.close();
+        recieveSocket.close();
+        sendSocket.close();
     }
 }
