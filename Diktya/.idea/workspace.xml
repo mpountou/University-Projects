@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1721f6b5-5482-48be-b95c-820a8bfcbb99" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Diktya/userApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Diktya/userApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/g1.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g1.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/g2.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g2.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/g3.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g3.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/g4.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g4.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/g5.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g5.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/g6.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g6.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/g7.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g7.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/g8.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g8.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/session1/Echo_Statistics_5489_case_without_delay.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/session1/Echo_Statistics_5489_case_without_delay.txt" afterDir="false" />
-    </list>
+    <list default="true" id="1721f6b5-5482-48be-b95c-820a8bfcbb99" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/userApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+            <state relative-caret-position="527">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,7 +85,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -111,22 +98,7 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Diktya" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Diktya" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Diktya" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Diktya" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -188,9 +160,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21641791" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21641791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -199,7 +170,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26218852" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26218852" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -320,8 +291,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/userApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="527">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
