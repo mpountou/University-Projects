@@ -3,7 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="1721f6b5-5482-48be-b95c-820a8bfcbb99" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Diktya/userApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Diktya/userApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/userApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/g1.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g1.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/g2.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g2.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/g3.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g3.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/g4.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g4.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/g5.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g5.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/g6.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g6.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/g7.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g7.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/g8.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g8.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/session1/Echo_Statistics_5489_case_without_delay.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/session1/Echo_Statistics_5489_case_without_delay.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,12 +26,12 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/userApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="274" column="27" selection-start-line="274" selection-start-column="27" selection-end-line="274" selection-end-column="27" />
+            <state relative-caret-position="131">
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,18 +50,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hostIP</find>
-      <find>echo</find>
-      <find>Time to recieve this packet was</find>
       <find>message</find>
       <find>packetInfo</find>
-      <find>txbuffer</find>
       <find>numberOfPackets</find>
       <find>echoCode</find>
-      <find>startTime</find>
       <find>avg</find>
       <find>totalTime</find>
-      <find>startloop</find>
       <find>endloop</find>
       <find>packetTime</find>
       <find>filewrite</find>
@@ -61,9 +65,21 @@
       <find>imageCode</find>
       <find>mode</find>
       <find>modeinfo</find>
-      <find>rxbuffer</find>
       <find>fileName</find>
       <find>clientPort</find>
+      <find>getBytes</find>
+      <find>sendPacket</find>
+      <find>hostAddress</find>
+      <find>DatagramPacket</find>
+      <find>startloop</find>
+      <find>startTime</find>
+      <find>recievePacket</find>
+      <find>numPackets</find>
+      <find>txbuffer</find>
+      <find>rxbuffer</find>
+      <find>b</find>
+      <find>initVariables</find>
+      <find>soundSample1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -75,18 +91,14 @@
         <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/src/modem.java" />
         <option value="$PROJECT_DIR$/src/mainclass.java" />
+        <option value="$PROJECT_DIR$/src/userApplication2.java" />
+        <option value="$PROJECT_DIR$/src/app.java" />
+        <option value="$PROJECT_DIR$/src/user2.java" />
         <option value="$PROJECT_DIR$/src/userApplication.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -97,6 +109,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -114,17 +127,21 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540937967924" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dev\Desktop\host\ithaki\Diktya\src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -139,18 +156,13 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="userApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="userApplication" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="userApplication" />
       <module name="Diktya" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.userApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -178,7 +190,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15138593" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21641791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -187,7 +199,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33152762" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26218852" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -219,16 +231,97 @@
     <entry file="file://$PROJECT_DIR$/Echo_R_5489_case_delay.txt" />
     <entry file="file://$PROJECT_DIR$/Echo_5489_case_delay.txt" />
     <entry file="file://$PROJECT_DIR$/Echo_Statistics_5489_case_delay.txt" />
-    <entry file="file://$PROJECT_DIR$/image3973CAM1.jpeg">
+    <entry file="file://$PROJECT_DIR$/image3973CAM1.jpeg" />
+    <entry file="file://$PROJECT_DIR$/image3973CAM2.jpeg" />
+    <entry file="file://$PROJECT_DIR$/DPCMsubF8416song.txt" />
+    <entry file="file://$PROJECT_DIR$/DPCMsubF8416freq.txt" />
+    <entry file="file://$PROJECT_DIR$/DPCMsamplesF8416freq.txt" />
+    <entry file="file://$PROJECT_DIR$/image7603CAM1.jpeg" />
+    <entry file="file://$PROJECT_DIR$/image8732CAMERA_2.jpeg" />
+    <entry file="file://$PROJECT_DIR$/image8732CAMERA_1.jpeg" />
+    <entry file="file://$PROJECT_DIR$/image7603CAMERA_1.jpeg" />
+    <entry file="file://$PROJECT_DIR$/image7603CAMERA_2.jpeg" />
+    <entry file="file://$PROJECT_DIR$/src/userApplication2.java" />
+    <entry file="file://$PROJECT_DIR$/AQDPCMsamplesF2742song.txt" />
+    <entry file="file://$PROJECT_DIR$/AQDPCMbetasF2742song.txt" />
+    <entry file="file://$PROJECT_DIR$/AQDPCMmeanF2742song.txt" />
+    <entry file="file://$PROJECT_DIR$/AQDPCMsubsF2742song.txt" />
+    <entry file="file://$PROJECT_DIR$/E8866.txt" />
+    <entry file="file://$PROJECT_DIR$/src/app.java" />
+    <entry file="file://$PROJECT_DIR$/image8175CAMERA_1.jpeg" />
+    <entry file="file://$PROJECT_DIR$/Echo_8866_case_delay.txt" />
+    <entry file="file://$PROJECT_DIR$/Echo_8866_case_without_delay.txt" />
+    <entry file="file://$PROJECT_DIR$/Echo_R_8866_case_without_delay.txt" />
+    <entry file="file://$PROJECT_DIR$/DPCMsubF7272freq.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DPCMsubF7317freq.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DPCMsamplesF7317freq.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DPCMsamplesF7272freq.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4342555">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image8850CAMERA_1.jpeg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/image3973CAM2.jpeg">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/AQDPCMbetasF8238song.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16412" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AQDPCMmeanF8238song.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7929" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AQDPCMsamplesF8238song.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4342742" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AQDPCMsubsF8238song.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4342742" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AQDPCMbetasF8238freq.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SamplesDPCM.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4347094" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/user2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SamplesDiffsDPCM.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4347094" />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/userApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="274" column="27" selection-start-line="274" selection-start-column="27" selection-end-line="274" selection-end-column="27" />
+        <state relative-caret-position="131">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

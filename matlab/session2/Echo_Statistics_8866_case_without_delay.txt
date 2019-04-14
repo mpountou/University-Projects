@@ -1,0 +1,7 @@
+Session time :4.853665295183336 minutes
+
+Total time : 5.00069159395 minutes
+
+Total number of packets : 12677.0
+Total average time : 22.972305570008686
+
