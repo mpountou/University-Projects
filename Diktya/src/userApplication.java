@@ -4,6 +4,8 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Scanner;
 
 import java.net.*;
@@ -14,11 +16,12 @@ import java.util.ArrayList;
 public class userApplication {
     public static void main(String[] param) {
         // session id
-        int serverPort = 38029 ; // MUST BE FILLED
-        int clientPort =  48029 ; // MUST BE FILLED
-        int echo_code_delay =4081 ; // MUST BE FILLED
-        int image_code = 0466; // MUST BE FILLED
-        int sound_code = 8238; // MUST BE FILLED
+        int serverPort =   38006 ; // MUST BE FILLED
+        int clientPort =   48006 ; // MUST BE FILLED
+        int echo_code_delay =5589 ; // MUST BE FILLED
+        int image_code = 6297; // MUST BE FILLED
+        int sound_code = 7097; // MUST BE FILLED
+        int copter_code = 6001; // MUST BE FILLED
         // initialize scanner
         Scanner scanner = new Scanner(System.in);
         //time to choose
@@ -29,7 +32,10 @@ public class userApplication {
         System.out.print("\n3. Create Image E1");
         System.out.print("\n4. Create Image E2");
         System.out.print("\n5. Create Temperatures");
-
+        System.out.print("\n6. Create DPCM request song");
+        System.out.print("\n7. Create DPCM request freq");
+        System.out.print("\n8. Create AQDPCM request song");
+        System.out.print("\n9. Create AQDPCM request freq");
         // get user choice
         userChoice = Integer.parseInt(scanner.nextLine());
         // apply
@@ -53,6 +59,30 @@ public class userApplication {
                 e.printStackTrace();
             }
         }
+        else if(userChoice == 8 || userChoice == 9){
+            try{
+                soundAQDPCM(sound_code,userChoice,serverPort,clientPort);
+            } catch (SocketException e) {
+                e.printStackTrace();
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (LineUnavailableException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (userChoice == 10){
+            try {
+                Ithakicopter(copter_code,serverPort,clientPort);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (LineUnavailableException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 
@@ -72,7 +102,6 @@ public class userApplication {
                 chosen_mode = "case_without_delay";
                 code = "E0000\r";
                 break;
-
         }
         //init InetAddress
         byte[] hostIP = {(byte) 155, (byte) 207, 18, (byte) 208};
@@ -352,9 +381,264 @@ public class userApplication {
 
 
 
+    public static void soundAQDPCM(int audioCode,int mode,int serverPort,int clientPort) throws SocketException,IOException,UnknownHostException,LineUnavailableException{
+        int numPackets = 999,mask1 = 15,mask2 = 240,rx;
+        int soundSample1 = 0,soundSample2 = 0;
+        int nibble1,nibble2,sub1,sub2,x1 = 0,x2 = 0,counter = 4,mean,b,temp = 0;
+        String message = "",packetInfo = "",modeinfo="";
+        ArrayList<Integer> means = new ArrayList<Integer>();
+        ArrayList<Integer> bs = new ArrayList<Integer>();
+        ArrayList<Integer> subs = new ArrayList<Integer>();
+        ArrayList<Integer> samples = new ArrayList<Integer>();
+
+
+        switch (mode){
+            case 8:
+                modeinfo="song";
+                packetInfo = "A" + Integer.toString(audioCode) + "AQF999";
+                break;
+            case 9:
+                modeinfo="freq";
+                packetInfo = "A" + Integer.toString(audioCode) + "AQT999";
+                break;
+        }
 
 
 
+        byte[] hostIP = { (byte)155,(byte)207,18,(byte)208 };
+        InetAddress hostAddress = InetAddress.getByAddress(hostIP);
 
+        byte[] txbuffer = packetInfo.getBytes();
+
+        DatagramSocket sendSocket = new DatagramSocket();
+        DatagramPacket sendPacket = new DatagramPacket(txbuffer,txbuffer.length, hostAddress,serverPort);
+
+        DatagramSocket recieveSocket = new DatagramSocket(clientPort);
+
+        byte[] rxbuffer = new byte[132];
+        DatagramPacket recievePacket = new DatagramPacket(rxbuffer,rxbuffer.length);
+        recieveSocket.setSoTimeout(5000);
+        sendSocket.send(sendPacket);
+        byte[] meanByte = new byte[4];
+        byte[] bByte = new byte[4];
+        byte sign;
+        byte[] song = new byte[256*2*numPackets];
+        for(int i = 1;i < numPackets;i++){
+            if((i%100)==0){
+                System.out.println((1000-i)+" samples left");
+            }
+
+            try{
+                recieveSocket.receive(recievePacket);
+                sign = (byte)( ( rxbuffer[1] & 0x80) !=0 ? 0xff : 0x00);//if rxbuffer[1]&10000000=0 then sign =0 else =01111111 , we take the compliment of this number
+                meanByte[3] = sign;
+                meanByte[2] = sign;
+                meanByte[1] = rxbuffer[1];
+                meanByte[0] = rxbuffer[0];
+                mean = ByteBuffer.wrap(meanByte).order(ByteOrder.LITTLE_ENDIAN).getInt(); //convert the array into integer number using LITTLE_ENDIAN format
+                means.add(mean);
+                sign = (byte)( ( rxbuffer[3] & 0x80) !=0 ? 0xff : 0x00);
+                bByte[3] = sign;
+                bByte[2] = sign;
+                bByte[1] = rxbuffer[3];
+                bByte[0] = rxbuffer[2];
+                b = ByteBuffer.wrap(bByte).order(ByteOrder.LITTLE_ENDIAN).getInt();
+                bs.add(b);
+
+                for (int j = 4;j <= 131;j++){ //the remaining bytes are the samples
+                    rx = rxbuffer[j];
+                    nibble1 = (int)(rx & 0x0000000F);
+                    nibble2 = (int)((rxbuffer[j] & 0x000000F0)>>4);
+                    sub1 = (nibble2-8);
+                    subs.add(sub1);
+                    sub2 = (nibble1-8);
+                    subs.add(sub2);
+                    sub1 = sub1*b;
+                    sub2 = sub2*b;
+                    x1 = temp + sub1 + mean;
+                    samples.add(x1);
+                    x2 = sub1 + sub2 + mean;
+                    temp = sub2;
+                    samples.add(x2);
+                    counter += 4;
+                    song[counter] = (byte)(x1 & 0x000000FF);
+                    song[counter + 1] = (byte)((x1 & 0x0000FF00)>>8);
+                    song[counter + 2] = (byte)(x2 & 0x000000FF);
+                    song[counter + 3] = (byte)((x2 & 0x0000FF00)>>8);
+
+
+                }
+            }catch (Exception ex){
+                System.out.println(ex);
+            }
+        }
+        if(mode==1){
+            System.out.println("Playing the song");
+
+            AudioFormat aqpcm = new AudioFormat(8000,16,1,true,false);
+            SourceDataLine playsong = AudioSystem.getSourceDataLine(aqpcm);
+            playsong.open(aqpcm,32000);
+            playsong.start();
+            playsong.write(song,0,256*2*numPackets);
+            playsong.stop();
+            playsong.close();
+        }
+
+
+        BufferedWriter bw = null;
+        try{
+            File file = new File("AQDPCMsubsF"+audioCode+modeinfo+".txt");
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            FileWriter fw = new FileWriter(file,false);
+            bw = new BufferedWriter(fw);
+            for(int i = 0 ; i < subs.size() ; i += 2){
+                bw.write("" + subs.get(i) + " " + subs.get(i+1));
+                bw.newLine();
+            }
+
+        }catch(IOException ioe){
+            ioe.printStackTrace();
+        }finally{
+            try{
+                if(bw != null) bw.close();
+            }catch(Exception ex){
+                System.out.println("Error in closing the BufferedWriter" + ex);
+            }
+        }
+
+        BufferedWriter mw = null;
+        try{
+            File file = new File("AQDPCMsamplesF"+audioCode+modeinfo+".txt");
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            FileWriter fw = new FileWriter(file,false);
+            mw = new BufferedWriter(fw);
+            for(int i = 0 ; i < samples.size() ; i += 2){
+                mw.write("" + samples.get(i) + " " + samples.get(i+1));
+                mw.newLine();
+            }
+
+        }catch(IOException ioe){
+            ioe.printStackTrace();
+        }finally{
+            try{
+                if(mw != null) mw.close();
+            }catch(Exception ex){
+                System.out.println("Error in closing the BufferedWriter" + ex);
+            }
+        }
+
+        BufferedWriter pw = null;
+        try{
+            File file = new File("AQDPCMmeanF"+audioCode+modeinfo+".txt");
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            FileWriter fw = new FileWriter(file,false);
+            pw = new BufferedWriter(fw);
+            for(int i = 0 ; i < means.size() ; i += 2){
+                pw.write("" + means.get(i));
+                pw.newLine();
+            }
+
+        }catch(IOException ioe){
+            ioe.printStackTrace();
+        }finally{
+            try{
+                if(pw != null) pw.close();
+            }catch(Exception ex){
+                System.out.println("Error in closing the BufferedWriter" + ex);
+            }
+        }
+
+        BufferedWriter kw = null;
+        try{
+            File file = new File("AQDPCMbetasF"+audioCode+modeinfo+".txt");
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            FileWriter fw = new FileWriter(file,false);
+            kw = new BufferedWriter(fw);
+            for(int i = 0 ; i < bs.size() ; i ++){
+                kw.write("" + bs.get(i));
+                kw.newLine();
+            }
+
+        }catch(IOException ioe){
+            ioe.printStackTrace();
+        }finally{
+            try{
+                if(kw != null) kw.close();
+            }catch(Exception ex){
+                System.out.println("Error in closing the BufferedWriter" + ex);
+            }
+        }
+
+        recieveSocket.close();
+        sendSocket.close();
+
+    }
+
+
+
+    public static void Ithakicopter(int copterCode, int serverPort, int clientPort) throws SocketException,IOException,UnknownHostException,LineUnavailableException,ClassNotFoundException{
+        String packetInfo="",message="";
+        ArrayList<String> messages = new ArrayList<String>();
+
+        packetInfo = "Q" + Integer.toString(copterCode)+"\r";
+        byte[] hostIP = { (byte)155,(byte)207,18,(byte)208 };
+        InetAddress hostAddress = InetAddress.getByAddress(hostIP);
+        byte[] txbuffer = packetInfo.getBytes();
+        DatagramSocket sendSocket = new DatagramSocket();
+        DatagramPacket sendPacket = new DatagramPacket(txbuffer,txbuffer.length, hostAddress,serverPort);
+        DatagramSocket recieveSocket = new DatagramSocket(clientPort);
+        byte[] rxbuffer = new byte[5000];
+        DatagramPacket recievePacket = new DatagramPacket(rxbuffer,rxbuffer.length);
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        messages.add("Current Session "+copterCode+" Current Time "+sdf.format(cal.getTime())+"\n");
+        recieveSocket.setSoTimeout(5000);
+        for (int i = 1;i <= 60 ; i++){
+            try{
+                sendSocket.send(sendPacket);
+                recieveSocket.receive(recievePacket);
+                message = new String(rxbuffer,0,recievePacket.getLength());
+                messages.add(message);
+                System.out.println(message);
+            }catch(Exception ex){
+                System.out.println(ex);
+            }
+
+        }
+
+        BufferedWriter bw = null;
+        try{
+            File file = new File("Ithakicopter"+copterCode+".txt");
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            FileWriter fw = new FileWriter(file,true);
+            bw = new BufferedWriter(fw);
+            for(int i = 0 ; i < messages.size(); i++){
+                bw.write("" + messages.get(i));
+                bw.newLine();
+            }
+
+        }catch(IOException ioe){
+            ioe.printStackTrace();
+        }finally{
+            try{
+                if(bw != null) bw.close();
+            }catch(Exception ex){
+                System.out.println("Error in closing the BufferedWriter" + ex);
+            }
+        }
+
+        recieveSocket.close();
+        sendSocket.close();
+    }
 
 }

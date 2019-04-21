@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1721f6b5-5482-48be-b95c-820a8bfcbb99" name="Default Changelist" comment="" />
+    <list default="true" id="1721f6b5-5482-48be-b95c-820a8bfcbb99" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Diktya/userApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Diktya/userApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/userApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/g9.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g9.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/session1/AQDPC/song/AQDPCMmeanF8238song.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/t.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/t.txt" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,12 +20,12 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/userApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="340">
+              <caret line="103" column="22" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,7 +44,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>message</find>
       <find>packetInfo</find>
       <find>numberOfPackets</find>
       <find>echoCode</find>
@@ -67,6 +73,7 @@
       <find>b</find>
       <find>initVariables</find>
       <find>soundSample1</find>
+      <find>soundDPCM</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -96,9 +103,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Diktya" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Diktya" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -160,8 +177,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21641791" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22707888" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -223,76 +241,34 @@
     <entry file="file://$PROJECT_DIR$/Echo_8866_case_delay.txt" />
     <entry file="file://$PROJECT_DIR$/Echo_8866_case_without_delay.txt" />
     <entry file="file://$PROJECT_DIR$/Echo_R_8866_case_without_delay.txt" />
-    <entry file="file://$PROJECT_DIR$/DPCMsubF7272freq.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DPCMsubF7317freq.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DPCMsamplesF7317freq.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DPCMsamplesF7272freq.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4342555">
-          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image8850CAMERA_1.jpeg">
+    <entry file="file://$PROJECT_DIR$/DPCMsubF7272freq.txt" />
+    <entry file="file://$PROJECT_DIR$/DPCMsubF7317freq.txt" />
+    <entry file="file://$PROJECT_DIR$/DPCMsamplesF7317freq.txt" />
+    <entry file="file://$PROJECT_DIR$/DPCMsamplesF7272freq.txt" />
+    <entry file="file://$PROJECT_DIR$/image8850CAMERA_1.jpeg" />
+    <entry file="file://$PROJECT_DIR$/AQDPCMbetasF8238song.txt" />
+    <entry file="file://$PROJECT_DIR$/AQDPCMmeanF8238song.txt" />
+    <entry file="file://$PROJECT_DIR$/AQDPCMsamplesF8238song.txt" />
+    <entry file="file://$PROJECT_DIR$/AQDPCMsubsF8238song.txt" />
+    <entry file="file://$PROJECT_DIR$/AQDPCMbetasF8238freq.txt" />
+    <entry file="file://$PROJECT_DIR$/SamplesDPCM.txt" />
+    <entry file="file://$PROJECT_DIR$/src/user2.java" />
+    <entry file="file://$PROJECT_DIR$/SamplesDiffsDPCM.txt" />
+    <entry file="file://$PROJECT_DIR$/DPCMsamplesF9331freq.txt" />
+    <entry file="file://$PROJECT_DIR$/AQDPCMbetasF7584song.txt" />
+    <entry file="file://$PROJECT_DIR$/AQDPCMmeanF7584song.txt" />
+    <entry file="file://$PROJECT_DIR$/AQDPCMsamplesF7584song.txt" />
+    <entry file="file://$PROJECT_DIR$/AQDPCMsubsF7584song.txt" />
+    <entry file="file://$PROJECT_DIR$/image6297CAMERA_1.jpeg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/AQDPCMbetasF8238song.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16412" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AQDPCMmeanF8238song.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7929" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AQDPCMsamplesF8238song.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4342742" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AQDPCMsubsF8238song.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4342742" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AQDPCMbetasF8238freq.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SamplesDPCM.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4347094" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/user2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SamplesDiffsDPCM.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4347094" />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/image6297CAMERA_2.jpeg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/userApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="340">
+          <caret line="103" column="22" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
