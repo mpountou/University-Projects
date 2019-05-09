@@ -2,6 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1721f6b5-5482-48be-b95c-820a8bfcbb99" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQDPCM_BETAS_CODE_9271_song.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQDPCM_MEANS_CODE_9271_song.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQDPCM_SAMPLES_CODE_9271_song.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQDPCM_SUBS_CODE9271_song.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image6297CAMERA_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image6297CAMERA_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Diktya/userApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Diktya/userApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/userApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userApplication.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/userApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="734" column="1" selection-start-line="734" selection-start-column="1" selection-end-line="734" selection-end-column="1" />
+            <state relative-caret-position="419">
+              <caret line="639" column="42" lean-forward="true" selection-start-line="639" selection-start-column="42" selection-end-line="639" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#echo_choice#0;class#userApplication#0" />
@@ -33,10 +41,7 @@
                 <element signature="e#22815#22824#0" expanded="true" />
                 <element signature="e#22732#22741#0" expanded="true" />
                 <element signature="e#22790#22799#0" expanded="true" />
-                <element signature="method#saveAQDPCsub#0;class#userApplication#0" />
                 <element signature="method#saveAQDPCsamples#0;class#userApplication#0" />
-                <element signature="method#save#0;class#userApplication#0" />
-                <element signature="method#saveAQDPCbetas#0;class#userApplication#0" />
               </folding>
             </state>
           </provider>
@@ -101,7 +106,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -185,10 +190,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.052516412" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25906184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -197,7 +201,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26477024" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26218852" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -276,8 +280,8 @@
     <entry file="file://$PROJECT_DIR$/AQDPCMbetasF7936freq.txt" />
     <entry file="file://$PROJECT_DIR$/src/userApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="734" column="1" selection-start-line="734" selection-start-column="1" selection-end-line="734" selection-end-column="1" />
+        <state relative-caret-position="419">
+          <caret line="639" column="42" lean-forward="true" selection-start-line="639" selection-start-column="42" selection-end-line="639" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#echo_choice#0;class#userApplication#0" />
@@ -290,10 +294,7 @@
             <element signature="e#22815#22824#0" expanded="true" />
             <element signature="e#22732#22741#0" expanded="true" />
             <element signature="e#22790#22799#0" expanded="true" />
-            <element signature="method#saveAQDPCsub#0;class#userApplication#0" />
             <element signature="method#saveAQDPCsamples#0;class#userApplication#0" />
-            <element signature="method#save#0;class#userApplication#0" />
-            <element signature="method#saveAQDPCbetas#0;class#userApplication#0" />
           </folding>
         </state>
       </provider>

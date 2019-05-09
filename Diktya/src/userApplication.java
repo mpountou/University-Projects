@@ -520,11 +520,11 @@ public class userApplication {
         // setup attributes
         switch (mode){
             case 8:
-                caseName="song";
+                caseName="SONG";
                 pRequest = "A" + Integer.toString(audioCode) + "AQF999";
                 break;
             case 9:
-                caseName="freq";
+                caseName="FREQ";
                 pRequest = "A" + Integer.toString(audioCode) + "AQT999";
                 break;
         }
@@ -637,7 +637,7 @@ public class userApplication {
     static void saveAQDPCsub(int audioCode,String caseName,ArrayList sb){
         BufferedWriter bufferedWriter = null;
         try{
-            File file = new File("AQDPCM_SUBS_CODE"+audioCode+"_"+caseName+".txt");
+            File file = new File("AQDPC_SUBS_CODE_"+audioCode+"_"+caseName+".txt");
             if(!file.exists()){
                 file.createNewFile();
             }
@@ -662,7 +662,7 @@ public class userApplication {
     static void saveAQDPCsamples(int audioCode,String caseName,ArrayList smpl){
         BufferedWriter mw = null;
         try{
-            File file = new File("AQDPCM_SAMPLES_CODE_"+audioCode+"_"+caseName+".txt");
+            File file = new File("AQDPC_SAMPLES_CODE_"+audioCode+"_"+caseName+".txt");
             if(!file.exists()){
                 file.createNewFile();
             }
@@ -686,7 +686,7 @@ public class userApplication {
     static void saveAQDPCmeans(int audioCode,String caseName,ArrayList mns){
         BufferedWriter pw = null;
         try{
-            File f = new File("AQDPCM_MEANS_CODE_"+audioCode+"_"+caseName+".txt");
+            File f = new File("AQDPC_MEANS_CODE_"+audioCode+"_"+caseName+".txt");
             if(!f.exists()){
                 f.createNewFile();
             }
@@ -709,7 +709,7 @@ public class userApplication {
     static void saveAQDPCbetas(int audioCode,String caseName,ArrayList bs){
         BufferedWriter kw = null;
         try{
-            File file = new File("AQDPCM_BETAS_CODE_"+audioCode+"_"+caseName+".txt");
+            File file = new File("AQDPC_BETAS_CODE_"+audioCode+"_"+caseName+".txt");
             if(!file.exists()){
                 file.createNewFile();
             }
@@ -732,5 +732,5 @@ public class userApplication {
     }
 
 
- 
+
 }
