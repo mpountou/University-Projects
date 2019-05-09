@@ -13,11 +13,11 @@ import java.util.ArrayList;
 public class userApplication {
     public static void main(String[] param) throws LineUnavailableException {
         // session id
-        int serverPort =   38005 ; // MUST BE FILLED
-        int clientPort =    48005 ; // MUST BE FILLED
+        int serverPort =    38004 ; // MUST BE FILLED
+        int clientPort =     48004 ; // MUST BE FILLED
         int echo_code_delay =4301 ; // MUST BE FILLED
-        int image_code = 4171; // MUST BE FILLED
-        int sound_code = 7936; // MUST BE FILLED
+        int image_code = 1286; // MUST BE FILLED
+        int sound_code = 9271; // MUST BE FILLED
         int copter_code = 6001; // MUST BE FILLED
         // initialize scanner
         Scanner scanner = new Scanner(System.in);
@@ -583,12 +583,13 @@ public class userApplication {
                 bByte[0] = recieveBuffer[2];
                 b = ByteBuffer.wrap(bByte).order(ByteOrder.LITTLE_ENDIAN).getInt();
                 bs.add(b);
+
                 for (int j = 4;j <= 131;j++){ //the remaining bytes are the samples
                     nb1 = (int)(recieveBuffer[j] & 0x0000000F);
                     nb2 = (int)((recieveBuffer[j] & 0x000000F0)>>4);
-                    reFnb1= nb2-8;
+                    reFnb1 = (nb2-8);
                     sb.add(reFnb1);
-                    reFnb2 = nb1-8;
+                    reFnb2 = (nb1-8);
                     sb.add(reFnb2);
                     reFnb1 = reFnb1*b;
                     reFnb2 = reFnb2*b;
@@ -597,19 +598,16 @@ public class userApplication {
                     x2 = reFnb1 + reFnb2 + mean;
                     temp = reFnb2;
                     smpl.add(x2);
-                    pos =pos+4;
+                    pos += 4;
                     song[pos] = (byte)(x1 & 0x000000FF);
-                    pos++;
-                    song[pos] = (byte)((x1 & 0x0000FF00)>>8);
-                    pos++;
-                    song[pos] = (byte)(x2 & 0x000000FF);
-                    pos++;
-                    song[pos] = (byte)((x2 & 0x0000FF00)>>8);
+                    song[pos + 1] = (byte)((x1 & 0x0000FF00)>>8);
+                    song[pos + 2] = (byte)(x2 & 0x000000FF);
+                    song[pos + 3] = (byte)((x2 & 0x0000FF00)>>8);
+
+
                 }
-            }catch (Exception exception){
-            }
-            if((i%250)==0){
-                System.out.println((1000-i)+"  left");
+            }catch (Exception ex){
+                System.out.println(ex);
             }
         }
         if(mode==8){
@@ -732,4 +730,7 @@ public class userApplication {
             }
         }
     }
+
+
+ 
 }

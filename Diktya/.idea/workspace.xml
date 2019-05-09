@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1721f6b5-5482-48be-b95c-820a8bfcbb99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../matlab/session1/AQDPC/freq/AQDPCMmeanF7936freq.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../matlab/session1/AQDPC/freq/AQDPCMsamplesF7936freq.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../matlab/session1/AQDPC/freq/AQDPCMsubsF7936freq.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../matlab/session2/AQDPC/freq/AQDPCMbetasF7936freq.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../matlab/session2/AQDPC/freq/AQDPCMsamplesF7936freq.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../matlab/session2/AQDPC/freq/AQDPCMsubsF7936freq.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../matlab/session2/AQDPC/song/AQDPCMbetasF7936song.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../matlab/session2/AQDPC/song/AQDPCMmeanF7936song.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../matlab/session2/AQDPC/song/AQDPCMsamplesF7936song.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../matlab/session2/AQDPC/song/AQDPCMsubsF7936song.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../matlab/session2/AQDPC/song/μη παραχαρεσετε την ιστορια.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Diktya/META-INF/Diktya.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Diktya/userApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Diktya/userApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/userApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/g9.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g9.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/session1/AQDPC/freq/AQDPCMbetasF8238freq.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/session1/AQDPC/freq/AQDPCMbetasF7936freq.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/session1/AQDPC/freq/AQDPCMmeanF8238freq.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/session2/AQDPC/freq/AQDPCMmeanF7936freq.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/session1/AQDPC/freq/AQDPCMsamplesF8238freq.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/session1/AQDPC/freq/AQDPCMsubsF8238freq.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matlab/t.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/t.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,18 +19,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/userApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="313" column="23" lean-forward="true" selection-start-line="313" selection-start-column="23" selection-end-line="313" selection-end-column="23" />
+            <state relative-caret-position="460">
+              <caret line="734" column="1" selection-start-line="734" selection-start-column="1" selection-end-line="734" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2731#2822#0" />
                 <element signature="method#echo_choice#0;class#userApplication#0" />
                 <element signature="method#image_choice#0;class#userApplication#0" />
                 <element signature="method#temperatures_choice#0;class#userApplication#0" />
                 <element signature="method#DPCM_choice#0;class#userApplication#0" />
                 <element signature="method#saveSubList#0;class#userApplication#0" />
                 <element signature="method#saveSampleList#0;class#userApplication#0" />
-                <element signature="method#AQDPCM_choice#0;class#userApplication#0" />
                 <element signature="e#22755#22764#0" expanded="true" />
                 <element signature="e#22815#22824#0" expanded="true" />
                 <element signature="e#22732#22741#0" expanded="true" />
@@ -75,7 +53,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>filewrite</find>
       <find>counters</find>
       <find>counterInterval</find>
       <find>imageCode</find>
@@ -105,6 +82,7 @@
       <find>playsong</find>
       <find>bw</find>
       <find>numPackets</find>
+      <find>temp</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -123,8 +101,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="953" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -207,10 +185,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23454158" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.052516412" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -219,7 +197,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26218852" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26477024" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -298,18 +276,16 @@
     <entry file="file://$PROJECT_DIR$/AQDPCMbetasF7936freq.txt" />
     <entry file="file://$PROJECT_DIR$/src/userApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="313" column="23" lean-forward="true" selection-start-line="313" selection-start-column="23" selection-end-line="313" selection-end-column="23" />
+        <state relative-caret-position="460">
+          <caret line="734" column="1" selection-start-line="734" selection-start-column="1" selection-end-line="734" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2731#2822#0" />
             <element signature="method#echo_choice#0;class#userApplication#0" />
             <element signature="method#image_choice#0;class#userApplication#0" />
             <element signature="method#temperatures_choice#0;class#userApplication#0" />
             <element signature="method#DPCM_choice#0;class#userApplication#0" />
             <element signature="method#saveSubList#0;class#userApplication#0" />
             <element signature="method#saveSampleList#0;class#userApplication#0" />
-            <element signature="method#AQDPCM_choice#0;class#userApplication#0" />
             <element signature="e#22755#22764#0" expanded="true" />
             <element signature="e#22815#22824#0" expanded="true" />
             <element signature="e#22732#22741#0" expanded="true" />
