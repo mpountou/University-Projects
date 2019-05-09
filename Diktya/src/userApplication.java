@@ -4,23 +4,20 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Scanner;
-
 import java.net.*;
 import java.io.*;
 import java.util.ArrayList;
 
 
 public class userApplication {
-    public static void main(String[] param) {
+    public static void main(String[] param) throws LineUnavailableException {
         // session id
-        int serverPort =   38006 ; // MUST BE FILLED
-        int clientPort =   48006 ; // MUST BE FILLED
-        int echo_code_delay =5589 ; // MUST BE FILLED
-        int image_code = 6297; // MUST BE FILLED
-        int sound_code = 7097; // MUST BE FILLED
+        int serverPort =   38005 ; // MUST BE FILLED
+        int clientPort =    48005 ; // MUST BE FILLED
+        int echo_code_delay =4301 ; // MUST BE FILLED
+        int image_code = 4171; // MUST BE FILLED
+        int sound_code = 7936; // MUST BE FILLED
         int copter_code = 6001; // MUST BE FILLED
         // initialize scanner
         Scanner scanner = new Scanner(System.in);
@@ -41,52 +38,49 @@ public class userApplication {
         // apply
         if (userChoice == 1 || userChoice == 2) {
             try {
-                echo(echo_code_delay, userChoice, serverPort, clientPort);
+                echo_choice(echo_code_delay, userChoice, serverPort, clientPort);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else if (userChoice == 3 || userChoice == 4) {
             try {
-                image(image_code, userChoice, serverPort, clientPort);
+                image_choice(image_code, userChoice, serverPort, clientPort);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         else if (userChoice == 5){
             try {
-                temperatures(echo_code_delay, serverPort, clientPort);
+                temperatures_choice(echo_code_delay, serverPort, clientPort);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        else if(userChoice == 8 || userChoice == 9){
+        else if(userChoice == 6 || userChoice == 7){
             try{
-                soundAQDPCM(sound_code,userChoice,serverPort,clientPort);
+                DPCM_choice(sound_code,userChoice,serverPort,clientPort);
             } catch (SocketException e) {
                 e.printStackTrace();
             } catch (UnknownHostException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
-            } catch (LineUnavailableException e) {
-                e.printStackTrace();
             }
         }
-        else if (userChoice == 10){
-            try {
-                Ithakicopter(copter_code,serverPort,clientPort);
+        else if(userChoice == 8 || userChoice == 9){
+            try{
+                AQDPCM_choice(sound_code,userChoice,serverPort,clientPort);
+            } catch (SocketException e) {
+                e.printStackTrace();
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
-            } catch (LineUnavailableException e) {
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
             }
         }
-
     }
-
-    public static void echo(int echo_code, int echo_case, int serverPort, int clientPort) throws SocketException, IOException, UnknownHostException {
+    // user cases 1 and 2
+    public static void echo_choice(int echo_code, int echo_case, int server_listening_port, int client_listening_port) throws SocketException, IOException, UnknownHostException {
         // used to print echo packet messages
         String echo_message = "";
         // gives the correct name to output files for both cases
@@ -110,8 +104,8 @@ public class userApplication {
         byte[] code_byte = code.getBytes();
         // init DatagramSocket
         DatagramSocket sendSocket = new DatagramSocket();
-        DatagramPacket sendPacket = new DatagramPacket(code_byte, code_byte.length, hostAddress, serverPort);
-        DatagramSocket recieveSocket = new DatagramSocket(clientPort);
+        DatagramPacket sendPacket = new DatagramPacket(code_byte, code_byte.length, hostAddress, server_listening_port);
+        DatagramSocket recieveSocket = new DatagramSocket(client_listening_port);
         recieveSocket.setSoTimeout(3600);
         // init arrayOf bytes
         byte[] recieve_byte = new byte[2048];
@@ -238,9 +232,7 @@ public class userApplication {
                 //TODO
             }
         }
-
         bufferedWriter = null;
-
         try {
             String finalDestination = "Echo_R_" + echo_code + "_" + chosen_mode + ".txt";
             File file = new File(finalDestination);
@@ -264,11 +256,9 @@ public class userApplication {
         }
         recieveSocket.close();
         sendSocket.close();
-
     }
-
-
-    public static void image(int code, int case_image, int server_listening_port, int client_listening_port) throws SocketException, IOException, UnknownHostException {
+    // User cases 3 and 4
+    public static void image_choice(int img_code, int case_image, int server_listening_port, int client_listening_port) throws SocketException, IOException, UnknownHostException {
         // update image code based on every case
         String image_code = "";
         // update title for file
@@ -276,11 +266,11 @@ public class userApplication {
         switch (case_image){
             case 3:
                 title_case = "CAMERA_1";
-                image_code = "M" + Integer.toString(code) + "\r";
+                image_code = "M" + Integer.toString(img_code) + "\r";
                 break;
             case 4:
                 title_case = "CAMERA_2";
-                image_code = "M" + Integer.toString(code) + " " + "CAM=PTZ" + "\r";
+                image_code = "M" + Integer.toString(img_code) + " " + "CAM=PTZ" + "\r";
                 break;
         }
         // initialize InetAddress
@@ -300,7 +290,7 @@ public class userApplication {
         // set Timeout
         recieveSocket.setSoTimeout(3200);
         // output file name
-        String outputName = ("image" + code + title_case + ".jpeg");
+        String outputName = ("image" + img_code + title_case + ".jpeg");
         // initialize File-Output-Stream
         FileOutputStream fOS = new FileOutputStream(outputName);
         for (; ; ) {
@@ -320,8 +310,8 @@ public class userApplication {
         recieveSocket.close();
         sendSocket.close();
     }
-
-    public static void temperatures(int echoCode, int server_listening_port, int client_listening_port) throws SocketException, IOException, UnknownHostException {
+    // User case 5
+    public static void temperatures_choice(int echoCode, int server_listening_port, int client_listening_port) throws SocketException, IOException, UnknownHostException {
         String packetInfo = "";
         String code = "E" + Integer.toString(echoCode) + "\r";
         byte[] hostIP = {(byte) 155, (byte) 207, 18, (byte) 208};
@@ -374,150 +364,314 @@ public class userApplication {
             }
             timeElapsed += endTime;
             endSession = (System.nanoTime() - beginSession) / 1000000;
-
         }
-
     }
-
-
-
-    public static void soundAQDPCM(int audioCode,int mode,int serverPort,int clientPort) throws SocketException,IOException,UnknownHostException,LineUnavailableException{
-        int numPackets = 999,mask1 = 15,mask2 = 240,rx;
-        int soundSample1 = 0,soundSample2 = 0;
-        int nibble1,nibble2,sub1,sub2,x1 = 0,x2 = 0,counter = 4,mean,b,temp = 0;
-        String message = "",packetInfo = "",modeinfo="";
-        ArrayList<Integer> means = new ArrayList<Integer>();
-        ArrayList<Integer> bs = new ArrayList<Integer>();
-        ArrayList<Integer> subs = new ArrayList<Integer>();
-        ArrayList<Integer> samples = new ArrayList<Integer>();
-
-
+    //User cases 6 and 7
+    public static void DPCM_choice(int audioCode,int mode,int serverPort,int clientPort) throws SocketException,IOException,UnknownHostException,LineUnavailableException{
+        // package request case
+        String pRequest = "";
+        // name request title
+        String nameCase="";
+        // setup attributes
         switch (mode){
-            case 8:
-                modeinfo="song";
-                packetInfo = "A" + Integer.toString(audioCode) + "AQF999";
+            case 6:
+                nameCase="SONG";
+                pRequest = "A" + Integer.toString(audioCode) + "F999";
                 break;
-            case 9:
-                modeinfo="freq";
-                packetInfo = "A" + Integer.toString(audioCode) + "AQT999";
+            case 7:
+                nameCase="FREQ";
+                pRequest = "A" + Integer.toString(audioCode) + "T999";
                 break;
         }
-
-
-
+        // declare number of packets
+        int totalPackets = 999;
+        // inet addresss initialize()
         byte[] hostIP = { (byte)155,(byte)207,18,(byte)208 };
         InetAddress hostAddress = InetAddress.getByAddress(hostIP);
-
-        byte[] txbuffer = packetInfo.getBytes();
-
+        // package code array of bytes
+        byte[] code_array = pRequest.getBytes();
+        // Datagram initialize()
         DatagramSocket sendSocket = new DatagramSocket();
-        DatagramPacket sendPacket = new DatagramPacket(txbuffer,txbuffer.length, hostAddress,serverPort);
-
+        DatagramPacket sendPacket = new DatagramPacket(code_array,code_array.length, hostAddress,serverPort);
         DatagramSocket recieveSocket = new DatagramSocket(clientPort);
-
-        byte[] rxbuffer = new byte[132];
-        DatagramPacket recievePacket = new DatagramPacket(rxbuffer,rxbuffer.length);
+        recieveSocket.setSoTimeout(3600);
+        // initialize array of bytes
+        byte[] bytes_recieved = new byte[128];
+        DatagramPacket recievePacket = new DatagramPacket(bytes_recieved,bytes_recieved.length);
+        sendSocket.send(sendPacket);
+        // initialize array of bytes
+        byte[] song = new byte[256*totalPackets];
+        // declare nibble variables
+        int nbL,nbH;
+        // reformed nibbles
+        int reFnb1,reFnb2;
+        // defines possition of array
+        int pos = 0;
+        int x1 = 0,x2 = 0;
+        ArrayList<Integer> sb = new ArrayList<Integer>();
+        ArrayList<Integer> smpl = new ArrayList<Integer>();
+        for(int i = 1;i < totalPackets;i++){
+            try{
+                recieveSocket.receive(recievePacket);
+                for (int j = 0;j <= 127;j++){
+                    //15 binary representation is 00001111
+                    nbL = bytes_recieved[j] & 15;
+                    //240 binary representation is 11110000
+                    nbH = (bytes_recieved[j] & 240)>>4;
+                    // reform nibble
+                    reFnb1 = nbL-8;
+                    // store
+                    sb.add(reFnb1);
+                    reFnb1 = reFnb1*5;
+                    // reform nibble
+                    reFnb2 = nbH-8;
+                    // store
+                    sb.add(reFnb2);
+                    reFnb2 = reFnb2*5;
+                    x1 = x2 + reFnb1;
+                    smpl.add(x1);
+                    x2 = x1 + reFnb2;
+                    smpl.add(x2);
+                    song[pos] = (byte)x1;
+                    // inc pos
+                    pos++;
+                    song[pos] = (byte)x2;
+                    // inc pos
+                    pos++;
+                }
+            }catch (Exception exception){
+               //fatal exception
+            }
+            if((i%250)==0){
+                System.out.println((1000-i)+" left");
+            }
+        }
+        if(mode==6){
+            AudioFormat pcm = new AudioFormat(8000,8,1,true,false);
+            SourceDataLine startPlaying = AudioSystem.getSourceDataLine(pcm);
+            startPlaying.open(pcm,32000);
+            startPlaying.start();
+            startPlaying.write(song,0,256*totalPackets);
+            startPlaying.stop();
+            startPlaying.close();
+            System.out.println("Song started.");
+        }
+        // export dcpm sub list
+        saveSubList(audioCode,nameCase,sb);
+        // export dcpm sample list
+        saveSampleList(audioCode,nameCase,smpl);
+        // disconnecting
+        recieveSocket.close();
+        sendSocket.close();
+    }
+    //exports data
+   static void saveSubList(int audioCode,String nameCase,ArrayList sb){
+        BufferedWriter bufferedWriter = null;
+        try{
+            File f = new File("DPCM_SUB_CODE_"+audioCode+"_"+nameCase+".txt");
+            if(!f.exists()){
+                f.createNewFile();
+            }
+            // append false
+            FileWriter fileWriter = new FileWriter(f,false);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            for(int i = 0 ; i < sb.size() ; i += 2){
+                bufferedWriter.write("" + sb.get(i) + " " + sb.get(i+1));
+                bufferedWriter.newLine();
+            }
+        }catch(IOException ioe){
+            ioe.printStackTrace();
+        }finally{
+            try{
+                if(bufferedWriter != null) bufferedWriter.close();
+            }catch(Exception ex){
+            }
+        }
+    }
+    // exports data
+    static void saveSampleList(int audioCode,String nameCase,ArrayList smpl){
+        BufferedWriter bufferedWriter = null;
+        try{
+            File file = new File("DPCM_SAMPLE_CODE_"+audioCode+"_"+nameCase+".txt");
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            FileWriter fileWriter = new FileWriter(file,false);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            for(int i = 0 ; i < smpl.size() ; i += 2){
+                bufferedWriter.write("" + smpl.get(i) + " " + smpl.get(i+1));
+                bufferedWriter.newLine();
+            }
+        }catch(IOException ioe){
+            ioe.printStackTrace();
+        }finally{
+            try{
+                if(bufferedWriter != null) bufferedWriter.close();
+            }catch(Exception ex){
+            }
+        }
+    }
+    // User cases 8 and 9
+    public static void AQDPCM_choice(int audioCode,int mode,int serverPort,int clientPort) throws SocketException,IOException,UnknownHostException,LineUnavailableException{
+        // package request case
+        String pRequest = "";
+        // package request title name
+        String caseName="";
+        // setup attributes
+        switch (mode){
+            case 8:
+                caseName="song";
+                pRequest = "A" + Integer.toString(audioCode) + "AQF999";
+                break;
+            case 9:
+                caseName="freq";
+                pRequest = "A" + Integer.toString(audioCode) + "AQT999";
+                break;
+        }
+        // inet address
+        byte[] hostIP = { (byte)155,(byte)207,18,(byte)208 };
+        InetAddress hostAddress = InetAddress.getByAddress(hostIP);
+        // packet code bytes array
+        byte[] code_array = pRequest.getBytes();
+        // datagram send initialize()
+        DatagramSocket sendSocket = new DatagramSocket();
+        DatagramPacket sendPacket = new DatagramPacket(code_array,code_array.length, hostAddress,serverPort);
+        // datagram recieve initialize()
+        DatagramSocket recieveSocket = new DatagramSocket(clientPort);
+        byte[] recieveBuffer = new byte[132];
+        DatagramPacket recievePacket = new DatagramPacket(recieveBuffer,recieveBuffer.length);
         recieveSocket.setSoTimeout(5000);
         sendSocket.send(sendPacket);
+        // array of bytes
         byte[] meanByte = new byte[4];
         byte[] bByte = new byte[4];
         byte sign;
-        byte[] song = new byte[256*2*numPackets];
-        for(int i = 1;i < numPackets;i++){
-            if((i%100)==0){
-                System.out.println((1000-i)+" samples left");
-            }
-
+        // declare number of packets
+        int totalPackets = 999;
+        // declare nibblers
+        int nb1,nb2;
+        // declare reformed nibbles
+        int reFnb1,reFnb2;
+        // declare possition
+        int pos = 4;
+        // ras
+        int x1 = 0,x2 = 0;
+        // sde nn
+        int mean,b,temp = 0;
+        // byte array
+        byte[] song = new byte[256*2*totalPackets];
+        //arraylists
+        ArrayList<Integer> sb = new ArrayList<Integer>();
+        ArrayList<Integer> smpl = new ArrayList<Integer>();
+        ArrayList<Integer> mns = new ArrayList<Integer>();
+        ArrayList<Integer> bs = new ArrayList<Integer>();
+        // initialize()
+        for(int i = 1;i < totalPackets;i++){
             try{
                 recieveSocket.receive(recievePacket);
-                sign = (byte)( ( rxbuffer[1] & 0x80) !=0 ? 0xff : 0x00);//if rxbuffer[1]&10000000=0 then sign =0 else =01111111 , we take the compliment of this number
+                sign = (byte)( ( recieveBuffer[1] & 0x80) !=0 ? 0xff : 0x00);//if rxbuffer[1]&10000000=0 then sign =0 else =01111111 , we take the compliment of this number
                 meanByte[3] = sign;
                 meanByte[2] = sign;
-                meanByte[1] = rxbuffer[1];
-                meanByte[0] = rxbuffer[0];
+                meanByte[1] = recieveBuffer[1];
+                meanByte[0] = recieveBuffer[0];
                 mean = ByteBuffer.wrap(meanByte).order(ByteOrder.LITTLE_ENDIAN).getInt(); //convert the array into integer number using LITTLE_ENDIAN format
-                means.add(mean);
-                sign = (byte)( ( rxbuffer[3] & 0x80) !=0 ? 0xff : 0x00);
+                mns.add(mean);
+                sign = (byte)( ( recieveBuffer[3] & 0x80) !=0 ? 0xff : 0x00);
                 bByte[3] = sign;
                 bByte[2] = sign;
-                bByte[1] = rxbuffer[3];
-                bByte[0] = rxbuffer[2];
+                bByte[1] = recieveBuffer[3];
+                bByte[0] = recieveBuffer[2];
                 b = ByteBuffer.wrap(bByte).order(ByteOrder.LITTLE_ENDIAN).getInt();
                 bs.add(b);
-
                 for (int j = 4;j <= 131;j++){ //the remaining bytes are the samples
-                    rx = rxbuffer[j];
-                    nibble1 = (int)(rx & 0x0000000F);
-                    nibble2 = (int)((rxbuffer[j] & 0x000000F0)>>4);
-                    sub1 = (nibble2-8);
-                    subs.add(sub1);
-                    sub2 = (nibble1-8);
-                    subs.add(sub2);
-                    sub1 = sub1*b;
-                    sub2 = sub2*b;
-                    x1 = temp + sub1 + mean;
-                    samples.add(x1);
-                    x2 = sub1 + sub2 + mean;
-                    temp = sub2;
-                    samples.add(x2);
-                    counter += 4;
-                    song[counter] = (byte)(x1 & 0x000000FF);
-                    song[counter + 1] = (byte)((x1 & 0x0000FF00)>>8);
-                    song[counter + 2] = (byte)(x2 & 0x000000FF);
-                    song[counter + 3] = (byte)((x2 & 0x0000FF00)>>8);
-
-
+                    nb1 = (int)(recieveBuffer[j] & 0x0000000F);
+                    nb2 = (int)((recieveBuffer[j] & 0x000000F0)>>4);
+                    reFnb1= nb2-8;
+                    sb.add(reFnb1);
+                    reFnb2 = nb1-8;
+                    sb.add(reFnb2);
+                    reFnb1 = reFnb1*b;
+                    reFnb2 = reFnb2*b;
+                    x1 = temp + reFnb1 + mean;
+                    smpl.add(x1);
+                    x2 = reFnb1 + reFnb2 + mean;
+                    temp = reFnb2;
+                    smpl.add(x2);
+                    pos =pos+4;
+                    song[pos] = (byte)(x1 & 0x000000FF);
+                    pos++;
+                    song[pos] = (byte)((x1 & 0x0000FF00)>>8);
+                    pos++;
+                    song[pos] = (byte)(x2 & 0x000000FF);
+                    pos++;
+                    song[pos] = (byte)((x2 & 0x0000FF00)>>8);
                 }
-            }catch (Exception ex){
-                System.out.println(ex);
+            }catch (Exception exception){
+            }
+            if((i%250)==0){
+                System.out.println((1000-i)+"  left");
             }
         }
-        if(mode==1){
-            System.out.println("Playing the song");
-
+        if(mode==8){
             AudioFormat aqpcm = new AudioFormat(8000,16,1,true,false);
-            SourceDataLine playsong = AudioSystem.getSourceDataLine(aqpcm);
-            playsong.open(aqpcm,32000);
-            playsong.start();
-            playsong.write(song,0,256*2*numPackets);
-            playsong.stop();
-            playsong.close();
+            SourceDataLine songStarts = AudioSystem.getSourceDataLine(aqpcm);
+            songStarts.open(aqpcm,32000);
+            songStarts.start();
+            songStarts.write(song,0,256*2*totalPackets);
+            songStarts.stop();
+            songStarts.close();
+            System.out.println("Song started");
         }
+        // exporting subs
+        saveAQDPCsub(audioCode,caseName,sb);
+        // exporting samples
+        saveAQDPCsamples(audioCode,caseName,smpl);
+        // export means
+        saveAQDPCmeans(audioCode,caseName,mns);
+        // export betas
+        saveAQDPCbetas(audioCode,caseName,bs);
+        // disconecting
+        recieveSocket.close();
+        sendSocket.close();
 
-
-        BufferedWriter bw = null;
+    }
+    // exports sub data for AQDPC
+    static void saveAQDPCsub(int audioCode,String caseName,ArrayList sb){
+        BufferedWriter bufferedWriter = null;
         try{
-            File file = new File("AQDPCMsubsF"+audioCode+modeinfo+".txt");
+            File file = new File("AQDPCM_SUBS_CODE"+audioCode+"_"+caseName+".txt");
             if(!file.exists()){
                 file.createNewFile();
             }
             FileWriter fw = new FileWriter(file,false);
-            bw = new BufferedWriter(fw);
-            for(int i = 0 ; i < subs.size() ; i += 2){
-                bw.write("" + subs.get(i) + " " + subs.get(i+1));
-                bw.newLine();
+            bufferedWriter = new BufferedWriter(fw);
+            for(int i = 0 ; i < sb.size() ; i += 2){
+                bufferedWriter.write("" + sb.get(i) + " " + sb.get(i+1));
+                bufferedWriter.newLine();
             }
 
         }catch(IOException ioe){
             ioe.printStackTrace();
         }finally{
             try{
-                if(bw != null) bw.close();
+                if(bufferedWriter != null) bufferedWriter.close();
             }catch(Exception ex){
-                System.out.println("Error in closing the BufferedWriter" + ex);
+
             }
         }
-
+    }
+    // exports samples data for AQDPC
+    static void saveAQDPCsamples(int audioCode,String caseName,ArrayList smpl){
         BufferedWriter mw = null;
         try{
-            File file = new File("AQDPCMsamplesF"+audioCode+modeinfo+".txt");
+            File file = new File("AQDPCM_SAMPLES_CODE_"+audioCode+"_"+caseName+".txt");
             if(!file.exists()){
                 file.createNewFile();
             }
             FileWriter fw = new FileWriter(file,false);
             mw = new BufferedWriter(fw);
-            for(int i = 0 ; i < samples.size() ; i += 2){
-                mw.write("" + samples.get(i) + " " + samples.get(i+1));
+            for(int i = 0 ; i < smpl.size() ; i += 2){
+                mw.write("" + smpl.get(i) + " " + smpl.get(i+1));
                 mw.newLine();
             }
 
@@ -527,36 +681,37 @@ public class userApplication {
             try{
                 if(mw != null) mw.close();
             }catch(Exception ex){
-                System.out.println("Error in closing the BufferedWriter" + ex);
             }
         }
-
+    }
+    // exports means data for AQDPC
+    static void saveAQDPCmeans(int audioCode,String caseName,ArrayList mns){
         BufferedWriter pw = null;
         try{
-            File file = new File("AQDPCMmeanF"+audioCode+modeinfo+".txt");
-            if(!file.exists()){
-                file.createNewFile();
+            File f = new File("AQDPCM_MEANS_CODE_"+audioCode+"_"+caseName+".txt");
+            if(!f.exists()){
+                f.createNewFile();
             }
-            FileWriter fw = new FileWriter(file,false);
+            FileWriter fw = new FileWriter(f,false);
             pw = new BufferedWriter(fw);
-            for(int i = 0 ; i < means.size() ; i += 2){
-                pw.write("" + means.get(i));
+            for(int i = 0 ; i < mns.size() ; i += 2){
+                pw.write("" + mns.get(i));
                 pw.newLine();
             }
-
         }catch(IOException ioe){
             ioe.printStackTrace();
         }finally{
             try{
                 if(pw != null) pw.close();
             }catch(Exception ex){
-                System.out.println("Error in closing the BufferedWriter" + ex);
             }
         }
-
+    }
+    // exports betas data for AQDPC
+    static void saveAQDPCbetas(int audioCode,String caseName,ArrayList bs){
         BufferedWriter kw = null;
         try{
-            File file = new File("AQDPCMbetasF"+audioCode+modeinfo+".txt");
+            File file = new File("AQDPCM_BETAS_CODE_"+audioCode+"_"+caseName+".txt");
             if(!file.exists()){
                 file.createNewFile();
             }
@@ -573,72 +728,8 @@ public class userApplication {
             try{
                 if(kw != null) kw.close();
             }catch(Exception ex){
-                System.out.println("Error in closing the BufferedWriter" + ex);
+
             }
         }
-
-        recieveSocket.close();
-        sendSocket.close();
-
     }
-
-
-
-    public static void Ithakicopter(int copterCode, int serverPort, int clientPort) throws SocketException,IOException,UnknownHostException,LineUnavailableException,ClassNotFoundException{
-        String packetInfo="",message="";
-        ArrayList<String> messages = new ArrayList<String>();
-
-        packetInfo = "Q" + Integer.toString(copterCode)+"\r";
-        byte[] hostIP = { (byte)155,(byte)207,18,(byte)208 };
-        InetAddress hostAddress = InetAddress.getByAddress(hostIP);
-        byte[] txbuffer = packetInfo.getBytes();
-        DatagramSocket sendSocket = new DatagramSocket();
-        DatagramPacket sendPacket = new DatagramPacket(txbuffer,txbuffer.length, hostAddress,serverPort);
-        DatagramSocket recieveSocket = new DatagramSocket(clientPort);
-        byte[] rxbuffer = new byte[5000];
-        DatagramPacket recievePacket = new DatagramPacket(rxbuffer,rxbuffer.length);
-        Calendar cal = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-        messages.add("Current Session "+copterCode+" Current Time "+sdf.format(cal.getTime())+"\n");
-        recieveSocket.setSoTimeout(5000);
-        for (int i = 1;i <= 60 ; i++){
-            try{
-                sendSocket.send(sendPacket);
-                recieveSocket.receive(recievePacket);
-                message = new String(rxbuffer,0,recievePacket.getLength());
-                messages.add(message);
-                System.out.println(message);
-            }catch(Exception ex){
-                System.out.println(ex);
-            }
-
-        }
-
-        BufferedWriter bw = null;
-        try{
-            File file = new File("Ithakicopter"+copterCode+".txt");
-            if(!file.exists()){
-                file.createNewFile();
-            }
-            FileWriter fw = new FileWriter(file,true);
-            bw = new BufferedWriter(fw);
-            for(int i = 0 ; i < messages.size(); i++){
-                bw.write("" + messages.get(i));
-                bw.newLine();
-            }
-
-        }catch(IOException ioe){
-            ioe.printStackTrace();
-        }finally{
-            try{
-                if(bw != null) bw.close();
-            }catch(Exception ex){
-                System.out.println("Error in closing the BufferedWriter" + ex);
-            }
-        }
-
-        recieveSocket.close();
-        sendSocket.close();
-    }
-
 }
