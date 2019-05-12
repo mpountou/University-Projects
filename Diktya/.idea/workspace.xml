@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1721f6b5-5482-48be-b95c-820a8bfcbb99" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Diktya/userApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Diktya/userApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/userApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/g9.m" beforeDir="false" afterPath="$PROJECT_DIR$/../matlab/g9.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/session1/AQDPC_done/SONG/AQDPC_BETAS_CODE_9271_SONG.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/session1/AQDPC_done/SONG/AQDPC_MEANS_CODE_9271_SONG.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/session1/AQDPC_done/SONG/AQDPC_SAMPLES_CODE_9271_SONG.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/session1/AQDPC_done/SONG/AQDPC_SUBS_CODE_9271_SONG.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/session1/AQDPC_done/SONG/sexy love.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/session1/DCPM_done/SONG/chase the sun.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/session2/AQDPC_done/SONG/μη παραχαρεσετε την ιστορια.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/session2/image1286CAMERA_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matlab/session2/image1286CAMERA_2.jpeg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/userApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="639" column="51" selection-start-line="639" selection-start-column="51" selection-end-line="639" selection-end-column="51" />
+            <state relative-caret-position="265">
+              <caret line="799" column="13" selection-start-line="799" selection-start-column="13" selection-end-line="799" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#echo_choice#0;class#userApplication#0" />
@@ -29,10 +41,12 @@
                 <element signature="method#DPCM_choice#0;class#userApplication#0" />
                 <element signature="method#saveSubList#0;class#userApplication#0" />
                 <element signature="method#saveSampleList#0;class#userApplication#0" />
-                <element signature="e#22755#22764#0" expanded="true" />
-                <element signature="e#22815#22824#0" expanded="true" />
-                <element signature="e#22732#22741#0" expanded="true" />
-                <element signature="e#22790#22799#0" expanded="true" />
+                <element signature="method#AQDPCM_choice#0;class#userApplication#0" />
+                <element signature="method#saveAQDPCsub#0;class#userApplication#0" />
+                <element signature="method#saveAQDPCsamples#0;class#userApplication#0" />
+                <element signature="method#saveAQDPCmeans#0;class#userApplication#0" />
+                <element signature="method#saveAQDPCbetas#0;class#userApplication#0" />
+                <element signature="e#30112#30120#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,7 +63,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>counters</find>
       <find>counterInterval</find>
       <find>imageCode</find>
       <find>fileName</find>
@@ -61,7 +74,6 @@
       <find>startloop</find>
       <find>startTime</find>
       <find>recievePacket</find>
-      <find>rxbuffer</find>
       <find>b</find>
       <find>initVariables</find>
       <find>soundSample1</find>
@@ -73,12 +85,14 @@
       <find>subs</find>
       <find>samples</find>
       <find>txbuffer</find>
-      <find>packetInfo</find>
       <find>modeinfo</find>
       <find>playsong</find>
       <find>bw</find>
       <find>numPackets</find>
       <find>temp</find>
+      <find>packetInfo</find>
+      <find>messages</find>
+      <find>rxbuffer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -97,7 +111,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -109,7 +123,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -121,6 +134,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -184,7 +198,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25906184" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26439232" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -193,7 +207,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26218852" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26218852" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -260,20 +274,16 @@
     <entry file="file://$PROJECT_DIR$/AQDPCMmeanF7584song.txt" />
     <entry file="file://$PROJECT_DIR$/AQDPCMsamplesF7584song.txt" />
     <entry file="file://$PROJECT_DIR$/AQDPCMsubsF7584song.txt" />
-    <entry file="file://$PROJECT_DIR$/image6297CAMERA_1.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image6297CAMERA_2.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/image6297CAMERA_1.jpeg" />
+    <entry file="file://$PROJECT_DIR$/image6297CAMERA_2.jpeg" />
     <entry file="file://$PROJECT_DIR$/AQDPCMsubsF7936freq.txt" />
     <entry file="file://$PROJECT_DIR$/AQDPCMsamplesF7936freq.txt" />
     <entry file="file://$PROJECT_DIR$/AQDPCMmeanF7936freq.txt" />
     <entry file="file://$PROJECT_DIR$/AQDPCMbetasF7936freq.txt" />
     <entry file="file://$PROJECT_DIR$/src/userApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="639" column="51" selection-start-line="639" selection-start-column="51" selection-end-line="639" selection-end-column="51" />
+        <state relative-caret-position="265">
+          <caret line="799" column="13" selection-start-line="799" selection-start-column="13" selection-end-line="799" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#echo_choice#0;class#userApplication#0" />
@@ -282,10 +292,12 @@
             <element signature="method#DPCM_choice#0;class#userApplication#0" />
             <element signature="method#saveSubList#0;class#userApplication#0" />
             <element signature="method#saveSampleList#0;class#userApplication#0" />
-            <element signature="e#22755#22764#0" expanded="true" />
-            <element signature="e#22815#22824#0" expanded="true" />
-            <element signature="e#22732#22741#0" expanded="true" />
-            <element signature="e#22790#22799#0" expanded="true" />
+            <element signature="method#AQDPCM_choice#0;class#userApplication#0" />
+            <element signature="method#saveAQDPCsub#0;class#userApplication#0" />
+            <element signature="method#saveAQDPCsamples#0;class#userApplication#0" />
+            <element signature="method#saveAQDPCmeans#0;class#userApplication#0" />
+            <element signature="method#saveAQDPCbetas#0;class#userApplication#0" />
+            <element signature="e#30112#30120#0" expanded="true" />
           </folding>
         </state>
       </provider>

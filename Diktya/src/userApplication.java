@@ -13,12 +13,12 @@ import java.util.ArrayList;
 public class userApplication {
     public static void main(String[] param) throws LineUnavailableException {
         // session id
-        int serverPort =    38004 ; // MUST BE FILLED
-        int clientPort =     48004 ; // MUST BE FILLED
+        int serverPort =    38009 ; // MUST BE FILLED
+        int clientPort =     48009 ; // MUST BE FILLED
         int echo_code_delay =4301 ; // MUST BE FILLED
         int image_code = 1286; // MUST BE FILLED
-        int sound_code = 9271; // MUST BE FILLED
-        int copter_code = 6001; // MUST BE FILLED
+        int sound_code = 7230; // MUST BE FILLED
+        int vehicle_code = 3489; // MUST BE FILLED
         // initialize scanner
         Scanner scanner = new Scanner(System.in);
         //time to choose
@@ -33,6 +33,7 @@ public class userApplication {
         System.out.print("\n7. Create DPCM request freq");
         System.out.print("\n8. Create AQDPCM request song");
         System.out.print("\n9. Create AQDPCM request freq");
+        System.out.print("\n10. Vehicle..");
         // get user choice
         userChoice = Integer.parseInt(scanner.nextLine());
         // apply
@@ -75,6 +76,19 @@ public class userApplication {
             } catch (UnknownHostException e) {
                 e.printStackTrace();
             } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (userChoice == 10){
+            try{
+                vehicle_choice(vehicle_code,serverPort,clientPort,"0C");
+            } catch (SocketException e) {
+                e.printStackTrace();
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
         }
@@ -727,6 +741,69 @@ public class userApplication {
                 if(kw != null) kw.close();
             }catch(Exception ex){
 
+            }
+        }
+    }
+    // User case 10
+    public static void vehicle_choice(int v_code,int server_listening_port,int client_listening_port,String code_pid) throws SocketException,IOException,UnknownHostException,LineUnavailableException,ClassNotFoundException{
+        // variable set for nameCase
+        String nameCase="";
+        String addT="";
+        // list of output
+        ArrayList<String> output = new ArrayList<String>();
+        // variables for time
+        double beginLoop=0;
+        double finishloop=0;
+        // initialize() inetaddress
+        byte[] hostIP = { (byte)155,(byte)207,18,(byte)208 };
+        InetAddress hostAddress = InetAddress.getByAddress(hostIP);
+        // initialize() datagramsocket
+        DatagramSocket sendSocket = new DatagramSocket();
+        DatagramSocket recieveSocket = new DatagramSocket(client_listening_port);
+        byte[] out_array = new byte[5000];
+        DatagramPacket recievePacket = new DatagramPacket(out_array,out_array.length);
+        recieveSocket.setSoTimeout(5000);
+        // get currentTime()
+        beginLoop = System.nanoTime();
+        while(finishloop<4*60*1000){
+            nameCase = "V"+Integer.toString(v_code)+"OBD=01 "+code_pid+"\r";
+            byte[] code_arary = nameCase.getBytes();
+            DatagramPacket sendPacket = new DatagramPacket(code_arary,code_arary.length, hostAddress,server_listening_port);
+            try{
+                sendSocket.send(sendPacket);
+                recieveSocket.receive(recievePacket);
+                addT = new String(out_array,0,recievePacket.getLength());
+                output.add(addT);
+            }catch(Exception ex){
+            }
+            finishloop=(System.nanoTime()-beginLoop)/1000000;
+        }
+        //exports vehicle
+        saveVehicleList(v_code,code_pid,output);
+        //disconnecting
+        recieveSocket.close();
+        sendSocket.close();
+    }
+    // exports vehicle info
+    public static void saveVehicleList(int vehicleCode,String pid,ArrayList output){
+        BufferedWriter bufferedWriter = null;
+        try{
+            File f = new File("OBD_VEHICLE_"+vehicleCode+"_PID_"+pid+".txt");
+            if(!f.exists()){
+                f.createNewFile();
+            }
+            FileWriter fileWriter = new FileWriter(f,true);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            for(int i = 0 ; i < output.size(); i++){
+                bufferedWriter.write("" + output.get(i));
+                bufferedWriter.newLine();
+            }
+        }catch(IOException ioe){
+            ioe.printStackTrace();
+        }finally{
+            try{
+                if(bufferedWriter != null) bufferedWriter.close();
+            }catch(Exception ex){
             }
         }
     }
