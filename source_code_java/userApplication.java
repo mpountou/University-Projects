@@ -103,11 +103,11 @@ public class userApplication {
         String code = "";
         switch (echo_case){
             case 1:
-                chosen_mode = "case_delay";
+                chosen_mode = "CASE_DELAY";
                 code = "E" + Integer.toString(echo_code) + "\r";
                 break;
             case 2:
-                chosen_mode = "case_without_delay";
+                chosen_mode = "CASE_WITHOUT_DELAY";
                 code = "E0000\r";
                 break;
         }
