@@ -226,7 +226,7 @@ public class userApplication {
         bufferedWriter = null;
 
         try {
-            String fileDestination = "Echo_Statistics_" + echo_code + "_" + chosen_mode + ".txt";
+            String fileDestination = "ECHO_STATISTICS_" + echo_code + "_" + chosen_mode + ".txt";
             File file = new File(fileDestination);
             bufferedWriter = new BufferedWriter(new FileWriter(fileDestination, false));
             if (!file.exists()) {
@@ -248,7 +248,7 @@ public class userApplication {
         }
         bufferedWriter = null;
         try {
-            String finalDestination = "Echo_R_" + echo_code + "_" + chosen_mode + ".txt";
+            String finalDestination = "ECHO_R_" + echo_code + "_" + chosen_mode + ".txt";
             File file = new File(finalDestination);
             bufferedWriter = new BufferedWriter(new FileWriter(finalDestination, false));
             if (!file.exists()) {
