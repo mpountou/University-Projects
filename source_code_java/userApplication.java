@@ -201,7 +201,7 @@ public class userApplication {
         // create output file
         BufferedWriter bufferedWriter = null;
         try {
-            String fileDestination = "Echo_" + echo_code + "_" + chosen_mode + ".txt";
+            String fileDestination = "ECHO_" + echo_code + "_" + chosen_mode + ".txt";
             File file = new File(fileDestination);
             bufferedWriter = new BufferedWriter(new FileWriter(fileDestination, false));
             if (!file.exists()) {
