@@ -1,0 +1,44 @@
+function sort_pictures 
+     set sortF $argv[1]
+     set finalF $argv[2] 
+     mkdir -p ~/Desktop/$finalF 
+     for i in (find ~/Desktop/$sort -type f -name "*.jpg") 
+        set year (date -r $i +"%Y")
+        set month (date -r $i +"%B")
+        set day (date -r $i +"%d")
+        mkdir -p ~/Desktop/$finalF/$year/$month/$day
+        mv $i ~/Desktop/$finalF/$year/$month/$day 
+     end
+end
+
+
+function sort_pictures
+                 for i in (find $argv[1] -type f -name "*.jpg")
+                                                                             
+                                                                             set year (date -r $i "+%Y")
+                                                                             set month (date -r $i "+%B")
+                                                                             set day (date -r $i "+%d")
+                                                                             echo $year
+                                                                             echo $month
+                                                                             echo $day
+                                                                             mkdir -p $argv[2]//$year/$month/$day         
+                                                                             cp $i $argv[2]/$year/$month/$day
+                 end
+             end
+
+
+#apt-get install exiftool
+
+function sort_pictures
+                         for i in (find $argv[1] -type f -name "*.jpg")
+                                                                                     
+                                                                                     set year (exiftool -a -G1 -s $i -FileInodeChangeDate -d /%Y |grep -o '/.*'|cut -c 2-20)
+                                                                                     set month (exiftool -a -G1 -s $i -FileInodeChangeDate -d /%B |grep -o '/.*'|cut -c 2-20)
+                                                                                     set day (exiftool -a -G1 -s $i -FileInodeChangeDate -d /%d |grep -o '/.*'|cut -c 2-20)
+                                                                                     echo $year
+                                                                                     echo $month
+                                                                                     echo $day
+                                                                                     mkdir -p $argv[2]/$year/$month/$day         
+                                                                                     cp $i $argv[2]/$year/$month/$day
+                         end
+                     end
