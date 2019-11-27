@@ -1,0 +1,11 @@
+function [ output_args ] = filter( input_args )
+
+if input_args == 1 
+    output_args = [1 2];
+else if input_args == 2
+    output_args = [1 3 2];
+else
+    output_args = [1 4 5 2];
+    end
+end
+

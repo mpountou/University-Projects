@@ -1,0 +1,13 @@
+function [ output_args ] = calc( n,m,y,u,t )
+
+ c = 0;
+ 
+ fi = zeros( (n+m+1), size(t,2) );
+ for i = n:-1:1
+ c = c + 1;
+ A_z = zeros(1,n);
+ A_z
+ end
+
+end
+

@@ -1,0 +1,13 @@
+t = 0:0.001:20;
+u1 = 4*sin(2*t);
+u2 = 3*cos(5*t);
+u = u1 + u2;
+y1 = out(t,u1);
+y2 = out(t,u2);
+y = out(t,u);
+y_sum = y1 + y2;
+figure;
+error = -y_sum + y;
+plot(t,error);
+legend('$error$');
+set(legend,'Interpreter','latex') ;
