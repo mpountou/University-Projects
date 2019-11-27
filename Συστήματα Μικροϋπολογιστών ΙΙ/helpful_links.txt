@@ -1,0 +1,15 @@
+========================= ADC ==============================
+
+https://www.electronicwings.com/avr-atmega/atmega1632-adc
+
+http://maxembedded.com/2011/06/the-adc-of-the-avr/
+
+http://www.avrbeginners.net/architecture/adc/adc.html
+
+======================== PWM =================================
+
+https://www.electronicwings.com/avr-atmega/atmega1632-pwm
+
+====================== TIMER =================================
+
+https://www.electronicwings.com/avr-atmega/atmega1632-timer
