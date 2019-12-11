@@ -28,7 +28,7 @@ a = num2str(k-1);
 x_1 = num2str(x(1,k));
 x_2 = num2str(x(2,k));
 f_min = num2str(double(f(x(1,k),x(2,k))));
-title(['$constant \enspace \gamma = 0.7 \enspace with \enspace iterations = $' a '\enspace at \enspace point (' x_1 ',' x_2 ') \enspace with \enspace value \enspace f(x,y)' f_min],'Interpreter', 'latex','FontSize',25)
+title(['$constant \enspace \gamma = 0.7 \enspace with \enspace iterations = $' a '\enspace at \enspace point (' x_1 ',' x_2 ') \enspace with \enspace value \enspace f(x,y)=' f_min],'Interpreter', 'latex','FontSize',25)
 hold on
 contour(x_, y_, z_)
 colorbar
@@ -41,7 +41,7 @@ a = num2str(k-1);
 x_1 = num2str(x(1,k));
 x_2 = num2str(x(2,k));
 f_min = num2str(double(f(x(1,k),x(2,k))));
-title(['$constant \enspace \gamma = 0.7 \enspace with \enspace iterations = $' a '\enspace at \enspace point (' x_1 ',' x_2 ') \enspace with \enspace value \enspace f(x,y)' f_min],'Interpreter', 'latex','FontSize',25)
+title(['$constant \enspace \gamma = 0.7 \enspace with \enspace iterations = $' a '\enspace at \enspace point (' x_1 ',' x_2 ') \enspace with \enspace value \enspace f(x,y)=' f_min],'Interpreter', 'latex','FontSize',25)
 hold on
 contour(x_, y_, z_)
 colorbar
@@ -54,15 +54,15 @@ a = num2str(k-1);
 x_1 = num2str(x(1,k));
 x_2 = num2str(x(2,k));
 f_min = num2str(double(f(x(1,k),x(2,k))));
-title(['$constant \enspace \gamma = 0.7 \enspace with \enspace iterations = $' a '\enspace at \enspace point (' x_1 ',' x_2 ') \enspace with \enspace value \enspace f(x,y)' f_min],'Interpreter', 'latex','FontSize',25)
+title(['$constant \enspace \gamma = 0.7 \enspace with \enspace iterations = $' a '\enspace at \enspace point (' x_1 ',' x_2 ') \enspace with \enspace value \enspace f(x,y)=' f_min],'Interpreter', 'latex','FontSize',25)
 hold on
 contour(x_, y_, z_)
 colorbar
 
 
 
-% f(x,y) = x^4 + y^2 - 0.2*sin(2*pi*x) - 0.3*cos(2*pi*y) ;
-% grad = gradient(f, [x, y]) ;
+% f(xx,yy) = xx^4 + yy^2 - 0.2*sin(2*pi*xx) - 0.3*cos(2*pi*yy) ;
+% grad = gradient(f, [xx, yy]) ;
 % 
 % %% calculate for contour (function f)
 % from_ = -1.1;
