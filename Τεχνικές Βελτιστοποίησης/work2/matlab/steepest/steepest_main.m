@@ -1,7 +1,7 @@
 %% steepest descent - first function
-syms x y
-f(x,y) = x^3 * exp(-x^2-y^4) ;
-grad = gradient(f, [x, y]) ;
+syms xx yy
+f(xx,yy) = xx^3 * exp(-xx^2-yy^4) ;
+grad = gradient(f, [xx, yy]) ;
 
 %% calculate for contour (function f)
 x_ = -3:0.1:3;
@@ -25,7 +25,10 @@ startingPoint  = [0 ; 0];
 figure;
 plot(x(1,:),x(2,:))
 a = num2str(k-1);
-title(['$constant \enspace \gamma = 0.7 \enspace with \enspace iterations = $' a],'Interpreter', 'latex','FontSize',25)
+x_1 = num2str(x(1,k));
+x_2 = num2str(x(2,k));
+f_min = num2str(double(f(x(1,k),x(2,k))));
+title(['$constant \enspace \gamma = 0.7 \enspace with \enspace iterations = $' a '\enspace at \enspace point (' x_1 ',' x_2 ') \enspace with \enspace value \enspace f(x,y)' f_min],'Interpreter', 'latex','FontSize',25)
 hold on
 contour(x_, y_, z_)
 colorbar
@@ -35,7 +38,10 @@ startingPoint  = [-1 ; -1];
 figure;
 plot(x(1,:),x(2,:));
 a = num2str(k-1);
-title(['$constant \enspace \gamma = 0.7 \enspace with \enspace iterations = $' a],'Interpreter', 'latex','FontSize',25)
+x_1 = num2str(x(1,k));
+x_2 = num2str(x(2,k));
+f_min = num2str(double(f(x(1,k),x(2,k))));
+title(['$constant \enspace \gamma = 0.7 \enspace with \enspace iterations = $' a '\enspace at \enspace point (' x_1 ',' x_2 ') \enspace with \enspace value \enspace f(x,y)' f_min],'Interpreter', 'latex','FontSize',25)
 hold on
 contour(x_, y_, z_)
 colorbar
@@ -45,7 +51,43 @@ startingPoint  = [1 ; 1];
 figure;
 p = plot(x(1,:),x(2,:));
 a = num2str(k-1);
-title(['$constant \enspace \gamma = 0.7 \enspace with \enspace iterations = $' a],'Interpreter', 'latex','FontSize',25)
+x_1 = num2str(x(1,k));
+x_2 = num2str(x(2,k));
+f_min = num2str(double(f(x(1,k),x(2,k))));
+title(['$constant \enspace \gamma = 0.7 \enspace with \enspace iterations = $' a '\enspace at \enspace point (' x_1 ',' x_2 ') \enspace with \enspace value \enspace f(x,y)' f_min],'Interpreter', 'latex','FontSize',25)
 hold on
 contour(x_, y_, z_)
 colorbar
+
+
+
+% f(x,y) = x^4 + y^2 - 0.2*sin(2*pi*x) - 0.3*cos(2*pi*y) ;
+% grad = gradient(f, [x, y]) ;
+% 
+% %% calculate for contour (function f)
+% from_ = -1.1;
+% to_ = 1.1;
+% x_ = from_:0.1:to_;
+% y_ = from_:0.1:to_;
+% 
+% cx = 0;
+% for i = x_
+%     cx = cx + 1;
+%     cy = 1;
+%     for j = y_
+%        z_(cx,cy) = f(i,j);
+%        cy = cy + 1;
+%     end
+% end
+% 
+% %% constant values - function g
+% 
+% startingPoint  = [0 ; 0];
+% [x,k] = steepest_constant(0.0001,startingPoint,0.01,grad);
+% figure;
+% plot(x(1,:),x(2,:))
+% a = num2str(k-1);
+% title(['$constant \enspace \gamma = 0.7 \enspace with \enspace iterations = $' a],'Interpreter', 'latex','FontSize',25)
+% hold on
+% contour(x_, y_, z_)
+% colorbar
