@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.2)  11 DEC 2019 17:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.2)  12 DEC 2019 07:46
 entering extended mode
 **./report.tex
 (report.tex
@@ -1309,75 +1309,105 @@ File: t1c.jpg Graphic file (type jpg)
 Package pdftex.def Info: t1c.jpg  used on input line 117.
 (pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
 
-Overfull \hbox (47.59343pt too wide) in paragraph at lines 117--118
- [][] 
- []
-
-<g1a.jpg, id=58, 1927.2pt x 966.61125pt>
-File: g1a.jpg Graphic file (type jpg)
-<use g1a.jpg>
-Package pdftex.def Info: g1a.jpg  used on input line 127.
-(pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
-
-Overfull \hbox (47.59343pt too wide) in paragraph at lines 127--128
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 117--118
  [][] 
  []
 
 
-Overfull \hbox (6.34563pt too wide) in paragraph at lines 129--130
-[]\LGR/cmr/m/n/10 Gia ar-qikì shmeÐo \OT1/cmr/m/n/10 (0,0) \LGR/cmr/m/n/10 metˆ
- apo \OT1/cmr/m/n/10 7 \LGR/cmr/m/n/10 epanal yeic katal -goume se top-ikì elˆq
-isto
+Overfull \hbox (18.08144pt too wide) in paragraph at lines 119--120
+\LGR/cmr/m/n/10 elˆqisto \OT1/cmr/m/n/10 (0.85,1.83) \LGR/cmr/m/n/10 gia dos-mè
+nh akrÐbeia \OT1/cmr/m/n/10 e=$10[]$ \LGR/cmr/m/n/10 me tim  \OT1/cmr/m/n/10 f(
+x,y)=4$\OMS/cmsy/m/n/10 \OT1/cmr/m/n/10 10[]$. \LGR/cmr/m/n/10 Apotèlesma
  []
 
 [4
 
- <./t1c.jpg> <./g1a.jpg>]
-<g1b.jpg, id=67, 1927.2pt x 966.61125pt>
-File: g1b.jpg Graphic file (type jpg)
-<use g1b.jpg>
-Package pdftex.def Info: g1b.jpg  used on input line 136.
+ <./t1c.jpg>]
+<mfa.jpg, id=64, 1927.2pt x 966.61125pt>
+File: mfa.jpg Graphic file (type jpg)
+<use mfa.jpg>
+Package pdftex.def Info: mfa.jpg  used on input line 132.
 (pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
 
-Overfull \hbox (47.59343pt too wide) in paragraph at lines 136--137
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 132--133
  [][] 
  []
 
-<g1c.jpg, id=68, 1927.2pt x 966.61125pt>
-File: g1c.jpg Graphic file (type jpg)
-<use g1c.jpg>
-Package pdftex.def Info: g1c.jpg  used on input line 144.
+<mfb.jpg, id=65, 1927.2pt x 966.61125pt>
+File: mfb.jpg Graphic file (type jpg)
+<use mfb.jpg>
+Package pdftex.def Info: mfb.jpg  used on input line 139.
 (pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
 
-Overfull \hbox (47.59343pt too wide) in paragraph at lines 144--145
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 139--140
  [][] 
  []
 
+[5 <./mfa.jpg> <./mfb.jpg>]
+<mfc.jpg, id=78, 1927.2pt x 966.61125pt>
+File: mfc.jpg Graphic file (type jpg)
+<use mfc.jpg>
+Package pdftex.def Info: mfc.jpg  used on input line 147.
+(pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
 
-Overfull \hbox (6.34563pt too wide) in paragraph at lines 146--147
-[]\LGR/cmr/m/n/10 Gia ar-qikì shmeÐo \OT1/cmr/m/n/10 (1,1) \LGR/cmr/m/n/10 metˆ
- apo \OT1/cmr/m/n/10 8 \LGR/cmr/m/n/10 epanal yeic katal -goume se top-ikì elˆq
-isto
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 147--148
+ [][] 
  []
 
-[5 <./g1b.jpg> <./g1c.jpg>] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 153.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 153.
+[6 <./mfc.jpg>]
+<arm1.jpg, id=86, 1927.2pt x 966.61125pt>
+File: arm1.jpg Graphic file (type jpg)
+<use arm1.jpg>
+Package pdftex.def Info: arm1.jpg  used on input line 156.
+(pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
+
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 156--157
+ [][] 
+ []
+
+<arm2.jpg, id=87, 1927.2pt x 966.61125pt>
+File: arm2.jpg Graphic file (type jpg)
+<use arm2.jpg>
+Package pdftex.def Info: arm2.jpg  used on input line 163.
+(pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
+
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 163--164
+ [][] 
+ []
+
+[7
+
+ <./arm1.jpg> <./arm2.jpg>]
+<arm3.jpg, id=97, 1927.2pt x 966.61125pt>
+File: arm3.jpg Graphic file (type jpg)
+<use arm3.jpg>
+Package pdftex.def Info: arm3.jpg  used on input line 171.
+(pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
+
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 171--172
+ [][] 
+ []
+
+[8
+
+ <./arm3.jpg>] [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 191.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 191.
  (report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 153.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 153.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 191.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 191.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 153.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 191.
  ) 
 Here is how much of TeX's memory you used:
- 20978 strings out of 492895
- 388282 string characters out of 3133470
- 455368 words of memory out of 3000000
- 24514 multiletter control sequences out of 15000+200000
+ 21007 strings out of 492895
+ 388618 string characters out of 3133470
+ 454367 words of memory out of 3000000
+ 24527 multiletter control sequences out of 15000+200000
  17761 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,48p,1479b,379s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,8n,48p,1365b,379s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/mpountou/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmbx10.pfb><C:/Users/mpountou/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmbx12.pfb><C:/Users/mpountou/AppData/Local/Programs/MiK
@@ -1406,9 +1436,9 @@ mpountou/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cbgreek/grxn1200.
 pfb><C:/Users/mpountou/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cbg
 reek/grxn1440.pfb><C:/Users/mpountou/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/cbgreek/grxn2488.pfb>
-Output written on report.pdf (7 pages, 1123782 bytes).
+Output written on report.pdf (10 pages, 1343218 bytes).
 PDF statistics:
- 164 PDF objects out of 1000 (max. 8388607)
- 27 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 193 PDF objects out of 1000 (max. 8388607)
+ 40 named destinations out of 1000 (max. 500000)
+ 68 words of extra memory for PDF output out of 10000 (max. 10000000)
 
