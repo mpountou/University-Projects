@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.2)  12 DEC 2019 07:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.2)  12 DEC 2019 09:06
 entering extended mode
 **./report.tex
 (report.tex
@@ -1277,137 +1277,236 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 82.
- [2
+<desc0.png, id=36, 422.32782pt x 128.73094pt>
+File: desc0.png Graphic file (type png)
+<use desc0.png>
+Package pdftex.def Info: desc0.png  used on input line 97.
+(pdftex.def)             Requested size: 844.65356pt x 257.46121pt.
+
+Overfull \hbox (19.20634pt too wide) in paragraph at lines 97--98
+ [][] 
+ []
+
+[2
+
+ <./desc0.png>] [3
 
 ]
-<t1a.jpg, id=45, 1927.2pt x 966.61125pt>
+<t1a.jpg, id=53, 1927.2pt x 966.61125pt>
 File: t1a.jpg Graphic file (type jpg)
 <use t1a.jpg>
-Package pdftex.def Info: t1a.jpg  used on input line 102.
+Package pdftex.def Info: t1a.jpg  used on input line 108.
 (pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
 
-Overfull \hbox (47.59343pt too wide) in paragraph at lines 102--103
+Overfull \hbox (47.59343pt too wide) in paragraph at lines 108--109
  [][] 
  []
 
-<t1b.jpg, id=46, 1927.2pt x 966.61125pt>
+<t1b.jpg, id=54, 1927.2pt x 966.61125pt>
 File: t1b.jpg Graphic file (type jpg)
 <use t1b.jpg>
-Package pdftex.def Info: t1b.jpg  used on input line 109.
+Package pdftex.def Info: t1b.jpg  used on input line 115.
 (pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
 
-Overfull \hbox (47.59343pt too wide) in paragraph at lines 109--110
+Overfull \hbox (47.59343pt too wide) in paragraph at lines 115--116
  [][] 
  []
 
-[3
+[4
 
  <./t1a.jpg> <./t1b.jpg>]
-<t1c.jpg, id=57, 1927.2pt x 966.61125pt>
+<t1c.jpg, id=65, 1927.2pt x 966.61125pt>
 File: t1c.jpg Graphic file (type jpg)
 <use t1c.jpg>
-Package pdftex.def Info: t1c.jpg  used on input line 117.
+Package pdftex.def Info: t1c.jpg  used on input line 123.
 (pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
 
-Overfull \hbox (19.18658pt too wide) in paragraph at lines 117--118
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 123--124
  [][] 
  []
 
 
-Overfull \hbox (18.08144pt too wide) in paragraph at lines 119--120
+Overfull \hbox (18.08144pt too wide) in paragraph at lines 125--126
 \LGR/cmr/m/n/10 elˆqisto \OT1/cmr/m/n/10 (0.85,1.83) \LGR/cmr/m/n/10 gia dos-mè
 nh akrÐbeia \OT1/cmr/m/n/10 e=$10[]$ \LGR/cmr/m/n/10 me tim  \OT1/cmr/m/n/10 f(
 x,y)=4$\OMS/cmsy/m/n/10 \OT1/cmr/m/n/10 10[]$. \LGR/cmr/m/n/10 Apotèlesma
  []
 
-[4
+[5
 
  <./t1c.jpg>]
-<mfa.jpg, id=64, 1927.2pt x 966.61125pt>
+<mfa.jpg, id=72, 1927.2pt x 966.61125pt>
 File: mfa.jpg Graphic file (type jpg)
 <use mfa.jpg>
-Package pdftex.def Info: mfa.jpg  used on input line 132.
+Package pdftex.def Info: mfa.jpg  used on input line 138.
 (pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
 
-Overfull \hbox (19.18658pt too wide) in paragraph at lines 132--133
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 138--139
  [][] 
  []
 
-<mfb.jpg, id=65, 1927.2pt x 966.61125pt>
+<mfb.jpg, id=73, 1927.2pt x 966.61125pt>
 File: mfb.jpg Graphic file (type jpg)
 <use mfb.jpg>
-Package pdftex.def Info: mfb.jpg  used on input line 139.
+Package pdftex.def Info: mfb.jpg  used on input line 145.
 (pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
 
-Overfull \hbox (19.18658pt too wide) in paragraph at lines 139--140
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 145--146
  [][] 
  []
 
-[5 <./mfa.jpg> <./mfb.jpg>]
-<mfc.jpg, id=78, 1927.2pt x 966.61125pt>
+[6 <./mfa.jpg> <./mfb.jpg>]
+<mfc.jpg, id=87, 1927.2pt x 966.61125pt>
 File: mfc.jpg Graphic file (type jpg)
 <use mfc.jpg>
-Package pdftex.def Info: mfc.jpg  used on input line 147.
+Package pdftex.def Info: mfc.jpg  used on input line 153.
 (pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
 
-Overfull \hbox (19.18658pt too wide) in paragraph at lines 147--148
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 153--154
  [][] 
  []
 
-[6 <./mfc.jpg>]
-<arm1.jpg, id=86, 1927.2pt x 966.61125pt>
+[7 <./mfc.jpg>]
+<arm1.jpg, id=94, 1927.2pt x 966.61125pt>
 File: arm1.jpg Graphic file (type jpg)
 <use arm1.jpg>
-Package pdftex.def Info: arm1.jpg  used on input line 156.
+Package pdftex.def Info: arm1.jpg  used on input line 162.
 (pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
 
-Overfull \hbox (19.18658pt too wide) in paragraph at lines 156--157
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 162--163
  [][] 
  []
 
-<arm2.jpg, id=87, 1927.2pt x 966.61125pt>
+<arm2.jpg, id=95, 1927.2pt x 966.61125pt>
 File: arm2.jpg Graphic file (type jpg)
 <use arm2.jpg>
-Package pdftex.def Info: arm2.jpg  used on input line 163.
+Package pdftex.def Info: arm2.jpg  used on input line 169.
 (pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
 
-Overfull \hbox (19.18658pt too wide) in paragraph at lines 163--164
- [][] 
- []
-
-[7
-
- <./arm1.jpg> <./arm2.jpg>]
-<arm3.jpg, id=97, 1927.2pt x 966.61125pt>
-File: arm3.jpg Graphic file (type jpg)
-<use arm3.jpg>
-Package pdftex.def Info: arm3.jpg  used on input line 171.
-(pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
-
-Overfull \hbox (19.18658pt too wide) in paragraph at lines 171--172
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 169--170
  [][] 
  []
 
 [8
 
- <./arm3.jpg>] [9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 191.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 191.
+ <./arm1.jpg> <./arm2.jpg>]
+<arm3.jpg, id=105, 1927.2pt x 966.61125pt>
+File: arm3.jpg Graphic file (type jpg)
+<use arm3.jpg>
+Package pdftex.def Info: arm3.jpg  used on input line 177.
+(pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
+
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 177--178
+ [][] 
+ []
+
+[9
+
+ <./arm3.jpg>]
+<desc2.png, id=112, 417.05812pt x 225.84375pt>
+File: desc2.png Graphic file (type png)
+<use desc2.png>
+Package pdftex.def Info: desc2.png  used on input line 193.
+(pdftex.def)             Requested size: 834.1142pt x 451.68637pt.
+
+Overfull \hbox (19.19824pt too wide) in paragraph at lines 193--194
+ [][] 
+ []
+
+[10 <./desc2.png>]
+<n1aa.jpg, id=122, 1927.2pt x 966.61125pt>
+File: n1aa.jpg Graphic file (type jpg)
+<use n1aa.jpg>
+Package pdftex.def Info: n1aa.jpg  used on input line 204.
+(pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
+
+Overfull \hbox (47.59343pt too wide) in paragraph at lines 204--205
+ [][] 
+ []
+
+[11
+
+ <./n1aa.jpg>]
+<n1a.jpg, id=132, 1927.2pt x 966.61125pt>
+File: n1a.jpg Graphic file (type jpg)
+<use n1a.jpg>
+Package pdftex.def Info: n1a.jpg  used on input line 218.
+(pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
+
+Overfull \hbox (47.59343pt too wide) in paragraph at lines 218--219
+ [][] 
+ []
+
+[12
+
+ <./n1a.jpg>]
+File: mfa.jpg Graphic file (type jpg)
+<use mfa.jpg>
+Package pdftex.def Info: mfa.jpg  used on input line 228.
+(pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
+
+Overfull \hbox (47.59343pt too wide) in paragraph at lines 228--229
+ [][] 
+ []
+
+[13
+
+]
+<mn2.jpg, id=150, 1927.2pt x 966.61125pt>
+File: mn2.jpg Graphic file (type jpg)
+<use mn2.jpg>
+Package pdftex.def Info: mn2.jpg  used on input line 241.
+(pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
+
+Overfull \hbox (47.59343pt too wide) in paragraph at lines 241--242
+ [][] 
+ []
+
+[14
+
+ <./mn2.jpg>]
+File: arm1.jpg Graphic file (type jpg)
+<use arm1.jpg>
+Package pdftex.def Info: arm1.jpg  used on input line 249.
+(pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
+
+Overfull \hbox (19.18658pt too wide) in paragraph at lines 249--250
+ [][] 
+ []
+
+[15
+
+]
+<armmin2.jpg, id=166, 1927.2pt x 966.61125pt>
+File: armmin2.jpg Graphic file (type jpg)
+<use armmin2.jpg>
+Package pdftex.def Info: armmin2.jpg  used on input line 262.
+(pdftex.def)             Requested size: 3854.39066pt x 1933.2178pt.
+
+Overfull \hbox (47.59343pt too wide) in paragraph at lines 262--263
+ [][] 
+ []
+
+[16
+
+ <./armmin2.jpg>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 265.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 265.
  (report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 191.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 191.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 265.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 265.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 191.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 265.
  ) 
 Here is how much of TeX's memory you used:
- 21007 strings out of 492895
- 388618 string characters out of 3133470
- 454367 words of memory out of 3000000
- 24527 multiletter control sequences out of 15000+200000
+ 21069 strings out of 492895
+ 389352 string characters out of 3133470
+ 453368 words of memory out of 3000000
+ 24551 multiletter control sequences out of 15000+200000
  17761 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,48p,1365b,379s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,8n,48p,1397b,379s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/mpountou/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmbx10.pfb><C:/Users/mpountou/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmbx12.pfb><C:/Users/mpountou/AppData/Local/Programs/MiK
@@ -1436,9 +1535,9 @@ mpountou/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cbgreek/grxn1200.
 pfb><C:/Users/mpountou/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cbg
 reek/grxn1440.pfb><C:/Users/mpountou/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/cbgreek/grxn2488.pfb>
-Output written on report.pdf (10 pages, 1343218 bytes).
+Output written on report.pdf (17 pages, 1822042 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
- 68 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 260 PDF objects out of 1000 (max. 8388607)
+ 71 named destinations out of 1000 (max. 500000)
+ 98 words of extra memory for PDF output out of 10000 (max. 10000000)
 
